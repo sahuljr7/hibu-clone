@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Poppins', sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+  
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+@layer base {
+  :root {
+    /* Light Mode Colors */
+    --background: 0 0% 98%;
+    --foreground: 270 10% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 270 10% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 10% 12%;
+    
+    /* Primary - Deep Purple */
+    --primary: 270 70% 35%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Light Gray */
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 270 10% 12%;
+    
+    /* Muted - Medium Gray */
+    --muted: 270 5% 85%;
+    --muted-foreground: 270 10% 50%;
+    
+    /* Accent - Bright Teal */
+    --accent: 180 80% 50%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* UI Elements */
+    --border: 270 5% 90%;
+    --input: 270 5% 92%;
+    --ring: 270 70% 35%;
+    
+    /* Charts */
+    --chart-1: 270 70% 35%;
+    --chart-2: 180 80% 50%;
+    --chart-3: 350 80% 60%;
+    --chart-4: 220 60% 50%;
+    --chart-5: 30 100% 55%;
+    
+    /* Radius */
+    --radius: 0.75rem;
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 270 10% 12%;
+    --sidebar-primary: 270 70% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 80% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 270 5% 90%;
+    --sidebar-ring: 270 70% 35%;
+  }
+  
+  .dark {
+    /* Dark Mode Colors */
+    --background: 270 15% 8%;
+    --foreground: 0 0% 98%;
+    --card: 270 15% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 270 15% 12%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Primary - Light Purple */
+    --primary: 270 60% 55%;
+    --primary-foreground: 270 15% 8%;
+    
+    /* Secondary - Dark Gray */
+    --secondary: 270 10% 18%;
+    --secondary-foreground: 0 0% 98%;
+    
+    /* Muted - Medium Dark Gray */
+    --muted: 270 10% 25%;
+    --muted-foreground: 270 10% 60%;
+    
+    /* Accent - Bright Teal */
+    --accent: 180 80% 55%;
+    --accent-foreground: 270 15% 8%;
+    
+    /* Destructive */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* UI Elements */
+    --border: 270 10% 20%;
+    --input: 270 10% 22%;
+    --ring: 180 80% 55%;
+    
+    /* Charts */
+    --chart-1: 270 60% 55%;
+    --chart-2: 180 80% 55%;
+    --chart-3: 350 80% 65%;
+    --chart-4: 220 60% 55%;
+    --chart-5: 30 100% 60%;
+    
+    /* Sidebar */
+    --sidebar-background: 270 15% 12%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 270 60% 55%;
+    --sidebar-primary-foreground: 270 15% 8%;
+    --sidebar-accent: 180 80% 55%;
+    --sidebar-accent-foreground: 270 15% 8%;
+    --sidebar-border: 270 10% 20%;
+    --sidebar-ring: 180 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans transition-colors duration-300 overflow-x-hidden w-full;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .glassmorphism {
+    @apply backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl;
+  }
+
+  .glassmorphism-light {
+    @apply backdrop-blur-md bg-white/70 border border-white/30 rounded-2xl;
+  }
+
+  .glassmorphism-dark {
+    @apply backdrop-blur-md bg-slate-900/50 border border-white/10 rounded-2xl;
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(180, 80, 255, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(180, 80, 255, 0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.7s ease-out 0.2s both;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-slide-in-right {
+    animation: slide-in-right 0.6s ease-out;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s infinite;
+  }
+  
+  @keyframes infinite-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .animate-infinite-scroll {
+    animation: infinite-scroll 30s linear infinite;
+  }
+  
+  .animate-infinite-scroll:hover {
+    animation-play-state: paused;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .animate-infinite-scroll {
+      animation-duration: 0.01ms !important;
+    }
+  }
+  
+  /* Responsive animation performance */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .animate-fade-in,
+    .animate-fade-in-up,
+    .animate-slide-in-right {
+      animation-duration: 0.4s;
+    }
+    
+    .animate-float {
+      animation-duration: 4s;
+    }
+  }
+}
