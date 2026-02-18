@@ -12,7 +12,7 @@ import { DisclaimerSection } from '@/components/disclaimer-section'
 
 export default function Page() {
   return (
-    <main className="w-full bg-background">
+    <main className="w-full">
       <RatingBar />
       <Navbar />
       <HeroSection />
