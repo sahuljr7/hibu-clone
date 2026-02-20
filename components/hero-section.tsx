@@ -5,6 +5,7 @@ import { VideoPreviewCard } from './video-preview-card'
 import { CTAButtons } from './cta-buttons'
 import { useParallax } from '@/hooks/use-parallax'
 import { ParallexText } from './parallax-text'
+import { TypewriterText } from './typewriter-text'
 
 export function HeroSection() {
   const { ref, parallaxValues } = useParallax({ offset: 30, type: 'slow' })
@@ -30,15 +31,21 @@ export function HeroSection() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            {/* Main Heading */}
-            <ParallexText
-              type="slow"
-              offset={35}
-              delay={0.1}
+            {/* Main Heading with Typewriter Effect */}
+            <motion.h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-balance leading-tight sm:leading-snug text-foreground"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              viewport={{ once: true }}
             >
-              A simpler, smarter, more effective way to market your business
-            </ParallexText>
+              <TypewriterText
+                text="A simpler, smarter, more effective way to market your business"
+                speed={40}
+                delay={300}
+                className="inline"
+              />
+            </motion.h1>
 
             {/* Subheading */}
             <motion.div

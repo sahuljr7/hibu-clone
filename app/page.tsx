@@ -7,7 +7,6 @@ import { ReviewsSection } from '@/components/reviews-section'
 import { StatsSection } from '@/components/stats-section'
 import { PartnersSection } from '@/components/partners-section'
 import { VideoFeatureSection } from '@/components/video-feature-section'
-import { ParallaxShowcase } from '@/components/parallax-showcase'
 import { FinalCTASection } from '@/components/final-cta-section'
 import { DisclaimerSection } from '@/components/disclaimer-section'
 
@@ -23,7 +22,6 @@ export default function Page() {
       <StatsSection />
       <PartnersSection />
       <VideoFeatureSection />
-      <ParallaxShowcase />
       <FinalCTASection />
       <DisclaimerSection />
     </main>

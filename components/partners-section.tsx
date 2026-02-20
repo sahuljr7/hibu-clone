@@ -1,6 +1,7 @@
 'use client'
 
 import { PartnerBadge } from './partner-badge'
+import { ScrollAnimatedText } from './scroll-animated-text'
 
 export function PartnersSection() {
   const partners = [
@@ -20,9 +21,13 @@ export function PartnersSection() {
     <section className="w-full py-12 sm:py-16 lg:py-20 bg-secondary/50">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Heading */}
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-center text-foreground mb-8 sm:mb-12 text-balance animate-fade-in">
+        <ScrollAnimatedText
+          type="reverse"
+          intensity={0.7}
+          className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-center text-foreground mb-8 sm:mb-12 text-balance animate-fade-in block"
+        >
           Put our powerful partnerships to work for your business
-        </h2>
+        </ScrollAnimatedText>
 
         {/* Infinite Scrolling Carousel */}
         <div className="w-full relative overflow-hidden">

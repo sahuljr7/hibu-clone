@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { useState } from 'react'
+import { ScrollAnimatedText } from './scroll-animated-text'
 
 export function FinalCTASection() {
   const [isHovered, setIsHovered] = useState(false)
@@ -47,15 +48,20 @@ export function FinalCTASection() {
           </motion.div>
 
           {/* Main Heading */}
-          <motion.h3
-            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-white text-balance leading-tight"
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            See how it can all work together for you
-          </motion.h3>
+            <ScrollAnimatedText
+              type="split-depth"
+              intensity={0.8}
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-white text-balance leading-tight inline-block"
+            >
+              See how it can all work together for you
+            </ScrollAnimatedText>
+          </motion.div>
 
           {/* Supporting Description */}
           <motion.p

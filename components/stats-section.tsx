@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { AnimatedCounter } from '@/components/animated-counter'
+import { ScrollAnimatedText } from './scroll-animated-text'
 
 const stats = [
   {
@@ -30,9 +31,13 @@ export function StatsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground text-balance leading-tight max-w-3xl">
+          <ScrollAnimatedText
+            type="zoom-out"
+            intensity={0.6}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground text-balance leading-tight max-w-3xl inline-block"
+          >
             Using today's advanced technology to deliver calls, clicks, and customers for our clients.
-          </h2>
+          </ScrollAnimatedText>
         </motion.div>
 
         {/* Stats Grid */}
