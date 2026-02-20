@@ -3,18 +3,13 @@
 import { useRef, useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 
-type AnimationType = 'horizontal' | 'scale' | 'zoom-in' | 'zoom-out' | 'reverse' | 'split-depth'
+type AnimationType = 'horizontal' | 'scale' | 'zoom-in' | 'zoom-out' | 'reverse'
 
 interface ScrollAnimatedTextProps {
   children: ReactNode
   type: AnimationType
   className?: string
   intensity?: number
-}
-
-interface CharacterPosition {
-  char: string
-  index: number
 }
 
 export function ScrollAnimatedText({
@@ -25,19 +20,6 @@ export function ScrollAnimatedText({
 }: ScrollAnimatedTextProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [progress, setProgress] = useState(0)
-  const [characters, setCharacters] = useState<CharacterPosition[]>([])
-
-  // Parse text into characters for split-depth animation
-  useEffect(() => {
-    if (type === 'split-depth' && typeof children === 'string') {
-      setCharacters(
-        children.split('').map((char, index) => ({
-          char,
-          index,
-        }))
-      )
-    }
-  }, [children, type])
 
   useEffect(() => {
     // Respect prefers-reduced-motion
@@ -108,41 +90,6 @@ export function ScrollAnimatedText({
       default:
         return 'translateZ(0)'
     }
-  }
-
-  // For split-depth animation, render individual characters
-  if (type === 'split-depth') {
-    const textContent = typeof children === 'string' ? children : ''
-    return (
-      <div
-        ref={ref}
-        className={`inline-block ${className}`}
-        aria-label={textContent}
-      >
-        {textContent.split('').map((char, index) => {
-          // Stagger the animation based on character position
-          const charProgress = progress + (index * 0.05 - (textContent.length * 0.025))
-          const clampedCharProgress = Math.max(-1, Math.min(1, charProgress))
-          
-          // Each character moves at slightly different speeds
-          const depth = (index - textContent.length / 2) / textContent.length
-          const charMove = clampedCharProgress * 30 * (1 + depth * 0.5) * intensity
-
-          return (
-            <span
-              key={index}
-              className="inline-block"
-              style={{
-                transform: `translateY(${charMove}px) translateZ(0)`,
-                transitionDuration: '0ms',
-              }}
-            >
-              {char === ' ' ? '\u00A0' : char}
-            </span>
-          )
-        })}
-      </div>
-    )
   }
 
   return (

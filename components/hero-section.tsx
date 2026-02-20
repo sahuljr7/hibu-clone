@@ -41,8 +41,11 @@ export function HeroSection() {
             >
               <TypewriterText
                 text="A simpler, smarter, more effective way to market your business"
-                speed={40}
-                delay={300}
+                speed={85}
+                delay={500}
+                deleteSpeed={50}
+                pauseDuration={5000}
+                loop={true}
                 className="inline"
               />
             </motion.h1>
