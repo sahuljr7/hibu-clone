@@ -106,7 +106,7 @@ export function Navbar() {
                   Support
                 </a>
                 <a
-                  href="#"
+                  href="/login"
                   className="block px-3 py-2 text-sm text-foreground hover:bg-secondary rounded transition-colors"
                 >
                   Login
@@ -182,7 +182,7 @@ export function Navbar() {
                   Support
                 </a>
                 <a
-                  href="#"
+                  href="/login"
                   className="block text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 px-2 rounded hover:bg-secondary/30"
                 >
                   Login
