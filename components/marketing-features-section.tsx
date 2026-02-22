@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { FeaturesGrid } from './features-grid'
 import { CTAButtons } from './cta-buttons'
+import { ScrollAnimatedText } from './scroll-animated-text'
 
 export function MarketingFeaturesSection() {
   return (
@@ -38,9 +39,13 @@ export function MarketingFeaturesSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground text-balance max-w-4xl mx-auto leading-tight sm:leading-snug md:leading-normal">
+          <ScrollAnimatedText
+            type="scale"
+            intensity={0.6}
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground text-balance max-w-4xl mx-auto leading-tight sm:leading-snug md:leading-normal inline-block"
+          >
             All the marketing you need, all working together
-          </h3>
+          </ScrollAnimatedText>
         </motion.div>
 
         {/* Features Grid */}

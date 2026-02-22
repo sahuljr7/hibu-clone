@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { ReviewCard } from '@/components/review-card'
 import { ArrowRight } from 'lucide-react'
 import { useState } from 'react'
+import { ScrollAnimatedText } from './scroll-animated-text'
 
 const reviews = [
   {
@@ -40,9 +41,13 @@ export function ReviewsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground text-balance">
+          <ScrollAnimatedText
+            type="zoom-in"
+            intensity={0.7}
+            className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground text-balance inline-block"
+          >
             Real reviews from real local business clients
-          </h2>
+          </ScrollAnimatedText>
         </motion.div>
 
         {/* Reviews Grid */}

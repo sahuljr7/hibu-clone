@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { FeatureBullets } from './feature-bullets'
 import { DashboardMockup } from './dashboard-mockup'
 import { CTAButtons } from './cta-buttons'
+import { ScrollAnimatedText } from './scroll-animated-text'
 
 export function GrowthSection() {
   return (
@@ -17,9 +18,13 @@ export function GrowthSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground mb-3 sm:mb-4 text-balance">
+          <ScrollAnimatedText
+            type="horizontal"
+            intensity={0.8}
+            className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground mb-3 sm:mb-4 text-balance block"
+          >
             Grow your business with Hibu One
-          </h2>
+          </ScrollAnimatedText>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
             Hibu's expertise and technology drive lower lead costs and higher marketing ROI
           </p>

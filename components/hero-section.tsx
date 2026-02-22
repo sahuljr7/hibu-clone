@@ -4,9 +4,11 @@ import { motion } from 'framer-motion'
 import { VideoPreviewCard } from './video-preview-card'
 import { CTAButtons } from './cta-buttons'
 import { useParallax } from '@/hooks/use-parallax'
+import { ParallexText } from './parallax-text'
+import { TypewriterText } from './typewriter-text'
 
 export function HeroSection() {
-  const { ref, parallaxValue } = useParallax({ offset: 30 })
+  const { ref, parallaxValues } = useParallax({ offset: 30, type: 'slow' })
 
   return (
     <section
@@ -16,7 +18,7 @@ export function HeroSection() {
       {/* Animated background gradient with parallax */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-primary/5"
-        style={{ y: parallaxValue }}
+        style={{ y: parallaxValues.y || 0 }}
       />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -29,15 +31,23 @@ export function HeroSection() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            {/* Main Heading */}
+            {/* Main Heading with Typewriter Effect */}
             <motion.h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-balance leading-tight sm:leading-snug text-foreground"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
               viewport={{ once: true }}
             >
-              A simpler, smarter, more effective way to market your business
+              <TypewriterText
+                text="A simpler, smarter, more effective way to market your business"
+                speed={85}
+                delay={500}
+                deleteSpeed={50}
+                pauseDuration={5000}
+                loop={true}
+                className="inline"
+              />
             </motion.h1>
 
             {/* Subheading */}

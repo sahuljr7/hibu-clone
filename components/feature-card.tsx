@@ -35,9 +35,50 @@ export function FeatureCard({ icon, title, description, index = 0 }: FeatureCard
       {/* Glassmorphism Glow background */}
       <div className="absolute -inset-2 sm:-inset-3 bg-gradient-to-br from-blue-200/20 via-blue-100/10 to-blue-200/20 dark:from-blue-500/20 dark:via-blue-400/10 dark:to-blue-500/20 rounded-2xl opacity-0 sm:opacity-30 group-hover:opacity-100 dark:group-hover:opacity-80 transition-all duration-500 blur-xl backdrop-blur-md" />
       
+      {/* Animated gradient border */}
+      <style>{`
+        @keyframes gradient-shift {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        
+        .gradient-border {
+          position: absolute;
+          inset: 0;
+          border-radius: 1rem;
+          padding: 2px;
+          background: linear-gradient(90deg, rgba(180, 80, 255, 0.8), rgba(0, 217, 163, 0.6), rgba(96, 165, 250, 0.6), rgba(180, 80, 255, 0.8));
+          background-size: 200% 200%;
+          opacity: 0;
+          transition: opacity 0.5s ease-in-out;
+          pointer-events: none;
+          animation: gradient-shift 8s ease-in-out infinite;
+          z-index: 1;
+        }
+        
+        .group:hover .gradient-border {
+          opacity: 1;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+          .gradient-border {
+            animation: none !important;
+            opacity: 0.3 !important;
+          }
+        }
+      `}</style>
+      <div className="gradient-border" />
+      
       {/* Card content with glassmorphism on hover */}
       <motion.div
-        className="relative bg-white/80 dark:bg-card/80 backdrop-blur-sm border border-white/20 dark:border-white/10 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 group-hover:bg-white/90 dark:group-hover:bg-card/90 group-hover:border-white/40 dark:group-hover:border-white/20 group-hover:shadow-xl dark:group-hover:shadow-blue-500/20"
+        className="relative bg-white/80 dark:bg-card/80 backdrop-blur-sm border border-white/20 dark:border-white/10 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 group-hover:bg-white/90 dark:group-hover:bg-card/90 group-hover:border-white/40 dark:group-hover:border-white/20 group-hover:shadow-xl dark:group-hover:shadow-blue-500/20 z-10"
         whileHover={{ scale: 1.02, y: -4 }}
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >
