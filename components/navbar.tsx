@@ -5,6 +5,7 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 import { ThemeToggle } from './theme-toggle'
 import { MegaMenu } from './mega-menu'
 import { IndustriesMegaMenu } from './industries-mega-menu'
+import { ResourcesMegaMenu } from './resources-mega-menu'
 import { AnimatePresence } from 'framer-motion'
 
 export function Navbar() {
@@ -12,6 +13,7 @@ export function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [showMegaMenu, setShowMegaMenu] = useState(false)
   const [showIndustriesMegaMenu, setShowIndustriesMegaMenu] = useState(false)
+  const [showResourcesMegaMenu, setShowResourcesMegaMenu] = useState(false)
 
   const menuItems = [
     {
@@ -30,7 +32,7 @@ export function Navbar() {
       label: 'Resources',
       href: '#',
       hasDropdown: true,
-      isMegaMenu: false,
+      isMegaMenu: true,
     },
     {
       label: 'Company',
@@ -67,16 +69,19 @@ export function Navbar() {
                 setOpenDropdown(item.label)
                 if (item.label === 'Digital Marketing Services') setShowMegaMenu(true)
                 if (item.label === 'Industries') setShowIndustriesMegaMenu(true)
+                if (item.label === 'Resources') setShowResourcesMegaMenu(true)
               }}
               onMouseLeave={() => {
                 setOpenDropdown(null)
                 setShowMegaMenu(false)
                 setShowIndustriesMegaMenu(false)
+                setShowResourcesMegaMenu(false)
               }}
             >
               <button className={`flex items-center gap-1 transition-all duration-300 font-medium relative group py-2 ${
                 (item.label === 'Digital Marketing Services' && showMegaMenu) ||
-                (item.label === 'Industries' && showIndustriesMegaMenu)
+                (item.label === 'Industries' && showIndustriesMegaMenu) ||
+                (item.label === 'Resources' && showResourcesMegaMenu)
                   ? 'text-primary'
                   : 'text-foreground hover:text-primary'
               }`}>
@@ -84,13 +89,15 @@ export function Navbar() {
                   {item.label}
                   <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
                     ((item.label === 'Digital Marketing Services' && showMegaMenu) ||
-                    (item.label === 'Industries' && showIndustriesMegaMenu)) ? 'w-full' : 'w-0 group-hover:w-full'
+                    (item.label === 'Industries' && showIndustriesMegaMenu) ||
+                    (item.label === 'Resources' && showResourcesMegaMenu)) ? 'w-full' : 'w-0 group-hover:w-full'
                   }`} />
                 </span>
                 {item.hasDropdown && (
                   <ChevronDown size={16} className={`transition-transform duration-300 ${
                     ((item.label === 'Digital Marketing Services' && showMegaMenu) ||
-                    (item.label === 'Industries' && showIndustriesMegaMenu)) ? 'rotate-180' : 'group-hover:rotate-180'
+                    (item.label === 'Industries' && showIndustriesMegaMenu) ||
+                    (item.label === 'Resources' && showResourcesMegaMenu)) ? 'rotate-180' : 'group-hover:rotate-180'
                   }`} />
                 )}
               </button>
@@ -100,6 +107,9 @@ export function Navbar() {
 
               {/* Mega Menu for Industries */}
               {item.label === 'Industries' && item.isMegaMenu && showIndustriesMegaMenu && <IndustriesMegaMenu />}
+
+              {/* Mega Menu for Resources */}
+              {item.label === 'Resources' && item.isMegaMenu && showResourcesMegaMenu && <ResourcesMegaMenu />}
 
               {/* Regular Dropdown Menu */}
               {item.hasDropdown && !item.isMegaMenu && (
