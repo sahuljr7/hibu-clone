@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { ServicesDropdown } from './services-dropdown'
 
 export function MegaMenu() {
   return (
@@ -69,7 +69,7 @@ export function MegaMenu() {
           </div>
 
           {/* Right Side: Promo Panel */}
-          <div className="col-span-1 bg-gradient-to-br from-slate-900 to-blue-900 dark:from-slate-800 dark:to-blue-800 rounded-lg p-6 text-white flex flex-col justify-between">
+          <div className="col-span-1 bg-gradient-to-br from-slate-900 to-blue-900 dark:from-slate-800 dark:to-blue-800 rounded-lg p-6 text-white flex flex-col justify-between relative">
             <div className="space-y-4">
               <div className="inline-block">
                 <span className="text-xs font-bold bg-white/20 text-white px-3 py-1 rounded-full">
@@ -85,6 +85,10 @@ export function MegaMenu() {
                 </p>
               </div>
             </div>
+
+            {/* Services Dropdown */}
+            <ServicesDropdown />
+
             {/* Dashboard mockup placeholder */}
             <div className="mt-4 bg-white/10 rounded-lg h-32 flex items-center justify-center border border-white/20">
               <span className="text-sm text-white/50">Dashboard Preview</span>
