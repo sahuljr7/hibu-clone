@@ -7,6 +7,7 @@ import { MegaMenu } from './mega-menu'
 import { IndustriesMegaMenu } from './industries-mega-menu'
 import { ResourcesMegaMenu } from './resources-mega-menu'
 import { CompanyMegaMenu } from './company-mega-menu'
+import { ClientSupportLoginDropdown } from './client-support-login-dropdown'
 import { AnimatePresence } from 'framer-motion'
 
 export function Navbar() {
@@ -16,6 +17,7 @@ export function Navbar() {
   const [showIndustriesMegaMenu, setShowIndustriesMegaMenu] = useState(false)
   const [showResourcesMegaMenu, setShowResourcesMegaMenu] = useState(false)
   const [showCompanyMegaMenu, setShowCompanyMegaMenu] = useState(false)
+  const [showClientSupportDropdown, setShowClientSupportDropdown] = useState(false)
 
   const menuItems = [
     {
@@ -152,28 +154,28 @@ export function Navbar() {
 
         {/* Right Side - Client Support & Theme Toggle */}
         <div className="hidden md:flex items-center gap-6">
-          <div className="relative group">
-            <button className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium">
-              Client Support & Login
-              <ChevronDown size={16} />
+          <div
+            className="relative"
+            onMouseEnter={() => setShowClientSupportDropdown(true)}
+            onMouseLeave={() => setShowClientSupportDropdown(false)}
+          >
+            <button className={`flex items-center gap-1 transition-all duration-300 font-medium py-2 ${
+              showClientSupportDropdown
+                ? 'text-primary'
+                : 'text-foreground hover:text-primary'
+            }`}>
+              <span className="relative">
+                Client Support & Login
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  showClientSupportDropdown ? 'w-full' : 'w-0'
+                }`} />
+              </span>
+              <ChevronDown size={16} className={`transition-transform duration-300 ${
+                showClientSupportDropdown ? 'rotate-180' : ''
+              }`} />
             </button>
 
-            <div className="absolute right-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <div className="p-3 space-y-2">
-                <a
-                  href="#"
-                  className="block px-3 py-2 text-sm text-foreground hover:bg-secondary rounded transition-colors"
-                >
-                  Support
-                </a>
-                <a
-                  href="/login"
-                  className="block px-3 py-2 text-sm text-foreground hover:bg-secondary rounded transition-colors"
-                >
-                  Login
-                </a>
-              </div>
-            </div>
+            {showClientSupportDropdown && <ClientSupportLoginDropdown />}
           </div>
 
           <ThemeToggle />
