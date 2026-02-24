@@ -10,12 +10,12 @@ export function MegaMenu() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
-      className="absolute left-0 top-full mt-0 w-screen bg-white dark:bg-slate-900 border-b border-border shadow-lg z-50"
+      className="fixed left-0 right-0 top-full mt-0 bg-white dark:bg-slate-900 border-b border-border shadow-lg z-50 overflow-x-auto"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-5 gap-8 p-8">
+      <div className="min-h-max">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 p-6 sm:p-8 max-w-7xl mx-auto w-full">
           {/* Column 1: Hibu One Platform */}
-          <div className="col-span-1">
+          <div className="min-w-max lg:min-w-0">
             <div className="space-y-3">
               <div className="inline-block">
                 <span className="text-sm font-semibold text-foreground/70">hibu</span>
@@ -33,7 +33,7 @@ export function MegaMenu() {
           </div>
 
           {/* Column 2: Ad Campaigns */}
-          <div className="col-span-1">
+          <div className="min-w-max lg:min-w-0">
             <div className="space-y-3">
               <h3 className="text-base font-bold text-foreground">
                 Ad Campaigns
@@ -45,7 +45,7 @@ export function MegaMenu() {
           </div>
 
           {/* Column 3: Organic Marketing */}
-          <div className="col-span-1">
+          <div className="min-w-max lg:min-w-0">
             <div className="space-y-3">
               <h3 className="text-base font-bold text-foreground">
                 Organic Marketing
@@ -57,7 +57,7 @@ export function MegaMenu() {
           </div>
 
           {/* Column 4: Platform Pricing */}
-          <div className="col-span-1">
+          <div className="min-w-max lg:min-w-0">
             <div className="space-y-3">
               <h3 className="text-base font-bold text-foreground">
                 Platform Pricing
@@ -69,7 +69,7 @@ export function MegaMenu() {
           </div>
 
           {/* Right Side: Promo Panel */}
-          <div className="col-span-1 bg-gradient-to-br from-slate-900 to-blue-900 dark:from-slate-800 dark:to-blue-800 rounded-lg p-6 text-white flex flex-col justify-between relative">
+          <div className="min-w-max lg:min-w-0 bg-gradient-to-br from-slate-900 to-blue-900 dark:from-slate-800 dark:to-blue-800 rounded-lg p-6 text-white flex flex-col justify-between relative">
             <div className="space-y-4">
               <div className="inline-block">
                 <span className="text-xs font-bold bg-white/20 text-white px-3 py-1 rounded-full">

@@ -55,13 +55,13 @@ export function CompanyMegaMenu() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
-      className="absolute left-0 top-full mt-0 w-screen bg-white dark:bg-slate-900 border-b border-border shadow-lg z-50"
+      className="fixed left-0 right-0 top-full mt-0 bg-white dark:bg-slate-900 border-b border-border shadow-lg z-50 overflow-x-auto"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-5 gap-8 p-8">
+      <div className="min-h-max">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 p-6 sm:p-8 max-w-7xl mx-auto w-full">
           {/* Left Section - 3 Columns */}
-          <div className="col-span-3">
-            <div className="grid grid-cols-3 gap-8">
+          <div className="lg:col-span-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {/* Column 1 - Company Info */}
               <div className="space-y-6">
                 <div className="inline-block">
@@ -113,7 +113,7 @@ export function CompanyMegaMenu() {
           </div>
 
           {/* Right Section - Success Stories Panel */}
-          <div className="col-span-2 bg-gradient-to-br from-slate-900 to-blue-900 dark:from-slate-800 dark:to-blue-800 rounded-lg p-6 text-white flex flex-col justify-between">
+          <div className="lg:col-span-2 bg-gradient-to-br from-slate-900 to-blue-900 dark:from-slate-800 dark:to-blue-800 rounded-lg p-6 text-white flex flex-col justify-between">
             <div className="space-y-6">
               <div className="inline-block">
                 <span className="text-xs font-bold bg-white/20 text-white px-3 py-1 rounded-full uppercase tracking-wide">

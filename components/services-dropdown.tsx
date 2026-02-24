@@ -69,10 +69,9 @@ export function ServicesDropdown() {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="absolute top-full left-0 right-0 mt-2 bg-slate-800 border border-white/20 rounded-lg shadow-xl z-50"
-            style={{ width: 'inherit' }}
+            className="absolute top-full left-0 right-0 mt-2 bg-slate-800 border border-white/20 rounded-lg shadow-xl z-50 min-w-full"
           >
-            <div className="py-2">
+            <div className="py-2 max-h-64 overflow-y-auto">
               {services.map((service, index) => (
                 <motion.button
                   key={service}
@@ -84,7 +83,7 @@ export function ServicesDropdown() {
                     setSelectedService(service)
                     setIsOpen(false)
                   }}
-                  className={`w-full px-4 py-2.5 text-left text-sm transition-colors duration-150 ${
+                  className={`w-full px-4 py-2.5 text-left text-sm transition-colors duration-150 whitespace-nowrap ${
                     selectedService === service
                       ? 'bg-white/20 text-white font-medium'
                       : 'text-white/80 hover:text-white hover:bg-white/10'

@@ -68,10 +68,10 @@ export function ResourcesMegaMenu() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
-      className="absolute left-0 top-full mt-0 w-screen bg-gray-50 dark:bg-slate-800 border-b border-border shadow-lg z-50"
+      className="fixed left-0 right-0 top-full mt-0 bg-gray-50 dark:bg-slate-800 border-b border-border shadow-lg z-50 overflow-x-auto"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-3 gap-12 p-8">
+      <div className="min-h-max">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 p-6 sm:p-8 max-w-7xl mx-auto w-full">
           {/* Left Columns - Resources */}
           {leftColumns.map((column, colIndex) => (
             <div key={colIndex} className="space-y-6">
