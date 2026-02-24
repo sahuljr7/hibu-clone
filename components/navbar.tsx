@@ -1,48 +1,51 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { ThemeToggle } from './theme-toggle'
-import { MegaMenu } from './mega-menu'
-import { IndustriesMegaMenu } from './industries-mega-menu'
-import { ResourcesMegaMenu } from './resources-mega-menu'
-import { CompanyMegaMenu } from './company-mega-menu'
 import { ClientSupportLoginDropdown } from './client-support-login-dropdown'
-import { AnimatePresence } from 'framer-motion'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
-  const [showMegaMenu, setShowMegaMenu] = useState(false)
-  const [showIndustriesMegaMenu, setShowIndustriesMegaMenu] = useState(false)
-  const [showResourcesMegaMenu, setShowResourcesMegaMenu] = useState(false)
-  const [showCompanyMegaMenu, setShowCompanyMegaMenu] = useState(false)
   const [showClientSupportDropdown, setShowClientSupportDropdown] = useState(false)
+  const [showMobileClientSupport, setShowMobileClientSupport] = useState(false)
+  const pathname = usePathname()
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Handle outside click to close dropdown
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowClientSupportDropdown(false)
+      }
+    }
+
+    if (showClientSupportDropdown) {
+      document.addEventListener('mousedown', handleClickOutside)
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
+    }
+  }, [showClientSupportDropdown])
 
   const menuItems = [
     {
       label: 'Digital Marketing Services',
-      href: '#',
-      hasDropdown: true,
-      isMegaMenu: true,
+      href: '/digital-marketing-services',
     },
     {
       label: 'Industries',
-      href: '#',
-      hasDropdown: true,
-      isMegaMenu: true,
+      href: '/industries',
     },
     {
       label: 'Resources',
-      href: '#',
-      hasDropdown: true,
-      isMegaMenu: true,
+      href: '/resources',
     },
     {
       label: 'Company',
-      href: '#',
-      hasDropdown: true,
-      isMegaMenu: true,
+      href: '/company',
     },
   ]
 
@@ -65,105 +68,43 @@ export function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 relative">
-          {menuItems.map((item) => (
-            <div
-              key={item.label}
-              className="relative"
-              onMouseEnter={() => {
-                setOpenDropdown(item.label)
-                if (item.label === 'Digital Marketing Services') setShowMegaMenu(true)
-                if (item.label === 'Industries') setShowIndustriesMegaMenu(true)
-                if (item.label === 'Resources') setShowResourcesMegaMenu(true)
-                if (item.label === 'Company') setShowCompanyMegaMenu(true)
-              }}
-              onMouseLeave={() => {
-                setOpenDropdown(null)
-                setShowMegaMenu(false)
-                setShowIndustriesMegaMenu(false)
-                setShowResourcesMegaMenu(false)
-                setShowCompanyMegaMenu(false)
-              }}
-            >
-              <button className={`flex items-center gap-1 transition-all duration-300 font-medium relative group py-2 ${
-                (item.label === 'Digital Marketing Services' && showMegaMenu) ||
-                (item.label === 'Industries' && showIndustriesMegaMenu) ||
-                (item.label === 'Resources' && showResourcesMegaMenu) ||
-                (item.label === 'Company' && showCompanyMegaMenu)
-                  ? 'text-primary'
-                  : 'text-foreground hover:text-primary'
-              }`}>
+          {menuItems.map((item) => {
+            const isActive = pathname === item.href || pathname.startsWith(item.href + '/')
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                className={`transition-all duration-300 font-medium relative group py-2 ${
+                  isActive
+                    ? 'text-primary border-b-2 border-primary'
+                    : 'text-foreground hover:text-primary'
+                }`}
+              >
                 <span className="relative">
                   {item.label}
-                  <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                    ((item.label === 'Digital Marketing Services' && showMegaMenu) ||
-                    (item.label === 'Industries' && showIndustriesMegaMenu) ||
-                    (item.label === 'Resources' && showResourcesMegaMenu) ||
-                    (item.label === 'Company' && showCompanyMegaMenu)) ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`} />
+                  {!isActive && (
+                    <span className="absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 w-0 group-hover:w-full" />
+                  )}
                 </span>
-                {item.hasDropdown && (
-                  <ChevronDown size={16} className={`transition-transform duration-300 ${
-                    ((item.label === 'Digital Marketing Services' && showMegaMenu) ||
-                    (item.label === 'Industries' && showIndustriesMegaMenu) ||
-                    (item.label === 'Resources' && showResourcesMegaMenu) ||
-                    (item.label === 'Company' && showCompanyMegaMenu)) ? 'rotate-180' : 'group-hover:rotate-180'
-                  }`} />
-                )}
-              </button>
-
-              {/* Mega Menu for Digital Marketing Services */}
-              {item.label === 'Digital Marketing Services' && item.isMegaMenu && showMegaMenu && <MegaMenu />}
-
-              {/* Mega Menu for Industries */}
-              {item.label === 'Industries' && item.isMegaMenu && showIndustriesMegaMenu && <IndustriesMegaMenu />}
-
-              {/* Mega Menu for Resources */}
-              {item.label === 'Resources' && item.isMegaMenu && showResourcesMegaMenu && <ResourcesMegaMenu />}
-
-              {/* Mega Menu for Company */}
-              {item.label === 'Company' && item.isMegaMenu && showCompanyMegaMenu && <CompanyMegaMenu />}
-
-              {/* Regular Dropdown Menu */}
-              {item.hasDropdown && !item.isMegaMenu && (
-                <div className="absolute left-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="p-3 space-y-2">
-                    <a
-                      href="#"
-                      className="block px-3 py-2 text-sm text-foreground hover:bg-secondary rounded transition-colors"
-                    >
-                      Option 1
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-3 py-2 text-sm text-foreground hover:bg-secondary rounded transition-colors"
-                    >
-                      Option 2
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-3 py-2 text-sm text-foreground hover:bg-secondary rounded transition-colors"
-                    >
-                      Option 3
-                    </a>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
+              </Link>
+            )
+          })}
         </div>
 
         {/* Right Side - Client Support & Theme Toggle */}
         <div className="hidden md:flex items-center gap-6">
           <div
+            ref={dropdownRef}
             className="relative"
-            onMouseEnter={() => setShowClientSupportDropdown(true)}
-            onMouseLeave={() => setShowClientSupportDropdown(false)}
           >
-            <button className={`flex items-center gap-1 transition-all duration-300 font-medium py-2 ${
-              showClientSupportDropdown
-                ? 'text-primary'
-                : 'text-foreground hover:text-primary'
-            }`}>
+            <button 
+              onClick={() => setShowClientSupportDropdown(!showClientSupportDropdown)}
+              className={`flex items-center gap-1 transition-all duration-300 font-medium py-2 ${
+                showClientSupportDropdown
+                  ? 'text-primary'
+                  : 'text-foreground hover:text-primary'
+              }`}
+            >
               <span className="relative">
                 Client Support & Login
                 <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
@@ -186,7 +127,7 @@ export function Navbar() {
           <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-foreground hover:text-primary active:text-primary/80 transition-colors p-2 rounded-lg touch-manipulation hover:bg-secondary/30"
+            className="text-foreground hover:text-primary active:text-primary/80 transition-colors p-2.5 rounded-lg touch-manipulation hover:bg-secondary/30 min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
           >
@@ -199,58 +140,52 @@ export function Navbar() {
       {isOpen && (
         <div className="md:hidden border-t border-border bg-card animate-fade-in max-h-screen overflow-y-auto">
           <div className="container mx-auto px-4 py-4 space-y-3">
-            {menuItems.map((item) => (
-              <div key={item.label} className="space-y-2">
-                <button className="flex items-center justify-between text-foreground hover:text-primary transition-colors font-medium w-full py-2 px-2 rounded hover:bg-secondary/50">
+            {menuItems.map((item) => {
+              const isActive = pathname === item.href || pathname.startsWith(item.href + '/')
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`flex items-center transition-colors font-medium w-full py-3 px-3 rounded hover:bg-secondary/50 touch-manipulation min-h-[44px] ${
+                    isActive
+                      ? 'text-primary border-b-2 border-primary'
+                      : 'text-foreground hover:text-primary'
+                  }`}
+                >
                   <span className="text-sm">{item.label}</span>
-                  {item.hasDropdown && (
-                    <ChevronDown size={16} className="flex-shrink-0" />
-                  )}
-                </button>
-                {item.hasDropdown && (
-                  <div className="pl-4 space-y-1.5">
-                    <a
-                      href="#"
-                      className="block text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 px-2 rounded hover:bg-secondary/30"
-                    >
-                      Option 1
-                    </a>
-                    <a
-                      href="#"
-                      className="block text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 px-2 rounded hover:bg-secondary/30"
-                    >
-                      Option 2
-                    </a>
-                    <a
-                      href="#"
-                      className="block text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 px-2 rounded hover:bg-secondary/30"
-                    >
-                      Option 3
-                    </a>
-                  </div>
-                )}
-              </div>
-            ))}
+                </Link>
+              )
+            })}
 
             <div className="border-t border-border pt-3 mt-3 space-y-2">
-              <button className="flex items-center justify-between text-foreground hover:text-primary transition-colors font-medium w-full py-2 px-2 rounded hover:bg-secondary/50">
+              <button 
+                onClick={() => setShowMobileClientSupport(!showMobileClientSupport)}
+                className={`flex items-center justify-between transition-colors font-medium w-full py-3 px-3 rounded hover:bg-secondary/50 touch-manipulation min-h-[44px] ${
+                  showMobileClientSupport ? 'text-primary' : 'text-foreground hover:text-primary'
+                }`}
+              >
                 <span className="text-sm">Client Support & Login</span>
-                <ChevronDown size={16} className="flex-shrink-0" />
+                <ChevronDown size={16} className={`flex-shrink-0 transition-transform duration-300 ${
+                  showMobileClientSupport ? 'rotate-180' : ''
+                }`} />
               </button>
-              <div className="pl-4 space-y-1.5">
-                <a
-                  href="#"
-                  className="block text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 px-2 rounded hover:bg-secondary/30"
-                >
-                  Support
-                </a>
-                <a
-                  href="/login"
-                  className="block text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 px-2 rounded hover:bg-secondary/30"
-                >
-                  Login
-                </a>
-              </div>
+              {showMobileClientSupport && (
+                <div className="pl-4 space-y-1.5 animate-fade-in">
+                  <a
+                    href="#"
+                    className="block text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors py-3 px-3 rounded hover:bg-secondary/30 touch-manipulation min-h-[44px] flex items-center"
+                  >
+                    Support
+                  </a>
+                  <a
+                    href="/login"
+                    className="block text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors py-3 px-3 rounded hover:bg-secondary/30 touch-manipulation min-h-[44px] flex items-center"
+                  >
+                    Login
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>

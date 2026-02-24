@@ -10,7 +10,7 @@ export function ClientSupportLoginDropdown() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
-      className="absolute right-0 top-full mt-0 min-w-max bg-white dark:bg-slate-900 border-b border-border shadow-lg z-50 max-w-full"
+      className="absolute right-0 top-full mt-0 min-w-max bg-white dark:bg-slate-900 border-b border-border shadow-lg z-50 max-w-full overflow-hidden"
     >
       <div className="p-6 sm:p-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 w-full">
