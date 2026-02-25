@@ -53,9 +53,9 @@ export function HibuOneFeaturePanel({
       aria-labelledby="feature-panel-heading"
     >
       <div className="container mx-auto px-4 sm:px-6">
-        {/* Green panel with rounded corners */}
+        {/* Green panel with rounded corners and glassmorphism */}
         <motion.div
-          className="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 md:p-12 lg:p-16 shadow-lg transition-colors duration-[600ms] ease-in-out"
+          className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950/40 dark:to-green-900/30 dark:border dark:border-green-800/30 rounded-3xl p-8 md:p-12 lg:p-16 shadow-lg dark:shadow-green-900/20 transition-colors duration-[600ms] ease-in-out backdrop-blur-sm"
           initial={prefersReducedMotion ? {} : { opacity: 0 }}
           animate={
             isInView
@@ -105,7 +105,7 @@ export function HibuOneFeaturePanel({
                         ease: easing,
                       }}
                     >
-                      <span className="text-green-600 font-bold mt-1">✓</span>
+                      <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
                       <span>{feature}</span>
                     </motion.li>
                   ))}
@@ -118,7 +118,7 @@ export function HibuOneFeaturePanel({
               {dashboardImages.map((imageUrl, index) => (
                 <motion.div
                   key={index}
-                  className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl"
+                  className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl backdrop-blur-sm bg-white/10 dark:bg-slate-800/50 dark:border dark:border-slate-700/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-500/20 dark:hover:shadow-green-500/30"
                   initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
                   animate={
                     isInView

@@ -46,9 +46,9 @@ export function OrganicMarketingSection({
       aria-labelledby="organic-marketing-heading"
     >
       <div className="container mx-auto px-4 sm:px-6">
-        {/* Light blue panel with rounded corners */}
+        {/* Light blue panel with rounded corners and glassmorphism */}
         <motion.div
-          className="bg-blue-50 rounded-3xl p-8 md:p-12 lg:p-16 shadow-lg transition-colors duration-[600ms] ease-in-out"
+          className="bg-blue-50 dark:from-blue-950/40 dark:to-blue-900/30 dark:bg-gradient-to-br dark:border dark:border-blue-800/30 rounded-3xl p-8 md:p-12 lg:p-16 shadow-lg dark:shadow-blue-900/20 transition-colors duration-[600ms] ease-in-out backdrop-blur-sm"
           initial={prefersReducedMotion ? {} : { opacity: 0 }}
           animate={
             isInView
@@ -126,7 +126,7 @@ export function OrganicMarketingSection({
                     ease: easing,
                   }}
                 >
-                  <span className="text-blue-600 font-bold mt-1">✓</span>
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">✓</span>
                   <span>{feature}</span>
                 </motion.li>
               ))}

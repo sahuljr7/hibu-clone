@@ -83,9 +83,9 @@ export function HibuOneHero({
       className="relative w-full py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden transition-colors duration-[600ms] ease-in-out"
       aria-labelledby="hero-heading"
     >
-      {/* Background gradient with subtle parallax effect */}
+      {/* Background gradient with subtle parallax effect - enhanced for dark mode */}
       <div 
-        className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 transition-colors duration-[600ms] ease-in-out"
+        className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 dark:from-primary/10 dark:via-slate-900 dark:to-accent/10 transition-colors duration-[600ms] ease-in-out"
         style={{
           transform: `translate3d(0, ${parallaxValues.y || 0}px, 0)`,
           willChange: prefersReducedMotion || isMobile ? 'auto' : 'transform',
@@ -157,9 +157,9 @@ export function HibuOneHero({
             </motion.div>
           </div>
 
-          {/* Media card - right column on desktop */}
+          {/* Media card with glassmorphism - right column on desktop */}
           <motion.div
-            className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl"
+            className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl backdrop-blur-sm bg-white/10 dark:bg-slate-800/50 dark:border dark:border-slate-700/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-primary/20 dark:hover:shadow-primary/30"
             initial={
               prefersReducedMotion ? {} : { opacity: 0, x: 20 }
             }

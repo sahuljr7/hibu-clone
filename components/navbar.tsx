@@ -52,19 +52,19 @@ export function Navbar() {
   return (
     <nav className="w-full bg-background border-b border-border sticky top-14 sm:top-12 z-50">
       <div className="container mx-auto px-4 py-3 sm:py-4 flex items-center justify-between">
-        {/* Logo with colored dots */}
-        <div className="flex-shrink-0">
+        {/* Logo with colored dots - clickable to home */}
+        <Link href="/" className="flex-shrink-0 cursor-pointer group">
           <div className="flex items-center gap-1">
-            <div className="flex gap-1 mr-1">
+            <div className="flex gap-1 mr-1 transition-transform duration-300 group-hover:scale-110">
               <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
               <div className="w-1.5 h-1.5 rounded-full bg-pink-500"></div>
               <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
             </div>
-            <h1 className="text-xl sm:text-2xl font-bold text-foreground font-display transition-all duration-300">
+            <h1 className="text-xl sm:text-2xl font-bold text-foreground font-display transition-all duration-300 group-hover:text-primary">
               hibu
             </h1>
           </div>
-        </div>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 relative">

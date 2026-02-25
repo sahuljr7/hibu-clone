@@ -19,7 +19,7 @@ This implementation plan breaks down the Hibu One landing page into incremental,
     - Return boolean indicating user preference
     - _Requirements: 3.7, 4.10, 8.1_
   
-  - [ ]* 1.3 Write property test for reduced motion hook
+  - [x] 1.3 Write property test for reduced motion hook
     - **Property 3: Motion Preference Respect**
     - **Validates: Requirements 3.7, 4.10, 8.1**
     - Test that when prefers-reduced-motion is enabled, hook returns true

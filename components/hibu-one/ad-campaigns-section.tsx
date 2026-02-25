@@ -58,7 +58,7 @@ export function AdCampaignsSection({
   return (
     <section
       ref={ref}
-      className="w-full py-12 sm:py-16 md:py-20 lg:py-24 bg-white transition-colors duration-[600ms] ease-in-out"
+      className="w-full py-12 sm:py-16 md:py-20 lg:py-24 bg-white dark:bg-slate-900 transition-colors duration-[600ms] ease-in-out"
       aria-labelledby="ad-campaigns-heading"
     >
       <div className="container mx-auto px-4 sm:px-6">
@@ -125,16 +125,16 @@ export function AdCampaignsSection({
                     ease: easing,
                   }}
                 >
-                  <span className="text-purple-600 font-bold mt-1">✓</span>
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">✓</span>
                   <span>{feature}</span>
                 </motion.li>
               ))}
             </ul>
           </div>
 
-          {/* Purple gradient media card - right side */}
+          {/* Purple gradient media card with glassmorphism - right side */}
           <motion.div
-            className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-purple-500 to-purple-700"
+            className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-purple-500 to-purple-700 dark:from-purple-600 dark:to-purple-900 backdrop-blur-sm border border-purple-400/20 dark:border-purple-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-purple-500/30 dark:hover:shadow-purple-500/50"
             initial={prefersReducedMotion ? {} : { opacity: 0, scale: 0.95 }}
             animate={
               isInView

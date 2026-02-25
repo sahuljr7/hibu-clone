@@ -71,14 +71,14 @@ export function MarketingBenefits({ cards }: MarketingBenefitsProps) {
                 ease: easing,
               }}
             >
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+              <Card className="h-full backdrop-blur-sm bg-white/80 dark:bg-slate-800/80 dark:border-slate-700/50 hover:shadow-lg dark:hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 border border-slate-200/50 dark:border-slate-700/50">
                 <CardHeader>
-                  <CardTitle className="text-2xl sm:text-3xl">
+                  <CardTitle className="text-2xl sm:text-3xl text-foreground">
                     {card.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base sm:text-lg leading-relaxed">
+                  <CardDescription className="text-base sm:text-lg leading-relaxed text-muted-foreground">
                     {card.description}
                   </CardDescription>
                 </CardContent>

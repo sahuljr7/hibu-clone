@@ -46,7 +46,7 @@ export function HibuOneFinalCTA({
   return (
     <section
       ref={ref}
-      className="w-full py-16 sm:py-20 md:py-24 lg:py-32 bg-slate-900 transition-colors duration-[600ms] ease-in-out"
+      className="w-full py-16 sm:py-20 md:py-24 lg:py-32 bg-slate-900 dark:bg-slate-950 dark:border-t dark:border-slate-800 transition-colors duration-[600ms] ease-in-out"
       aria-labelledby="final-cta-heading"
     >
       <div className="container mx-auto px-4 sm:px-6">
@@ -74,7 +74,7 @@ export function HibuOneFinalCTA({
 
           {/* Description with fade-in, delay 200ms */}
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-slate-300 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto"
             initial={prefersReducedMotion ? {} : { opacity: 0 }}
             animate={
               isInView
@@ -110,7 +110,7 @@ export function HibuOneFinalCTA({
           >
             <Link
               href={ctaHref}
-              className="inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold text-white bg-primary hover:bg-primary/90 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-900"
+              className="inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold text-white bg-primary hover:bg-primary/90 dark:bg-primary/90 dark:hover:bg-primary rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-primary/30 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-900 dark:focus:ring-offset-slate-950"
             >
               {ctaText}
             </Link>
