@@ -110,7 +110,7 @@ export function HibuOneFinalCTA({
           >
             <Link
               href={ctaHref}
-              className="inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold text-white bg-primary hover:bg-primary/90 dark:bg-primary/90 dark:hover:bg-primary rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-primary/30 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-900 dark:focus:ring-offset-slate-950"
+              className="inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold text-white bg-primary hover:bg-primary/90 active:bg-primary/80 dark:bg-primary/90 dark:hover:bg-primary dark:active:bg-primary/70 rounded-lg transition-all duration-200 hover:scale-105 active:scale-100 hover:shadow-lg hover:shadow-primary/30 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-900 dark:focus:ring-offset-slate-950 cursor-pointer"
             >
               {ctaText}
             </Link>

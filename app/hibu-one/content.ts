@@ -159,7 +159,7 @@ export const hibuOneContent: HibuOnePageContent = {
       'Join thousands of businesses that trust Hibu One to manage their digital marketing. Get started today and see the difference.',
     cta: {
       text: 'Start Your Free Trial',
-      href: '/signup',
+      href: '/get-started-2026',
       variant: 'primary',
     },
   },

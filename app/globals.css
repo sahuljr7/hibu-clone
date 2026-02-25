@@ -21,6 +21,10 @@
   .font-display {
     font-family: var(--font-display);
   }
+  
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
 }
 
 @layer base {

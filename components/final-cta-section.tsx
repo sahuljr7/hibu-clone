@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { useState } from 'react'
@@ -75,24 +76,26 @@ export function FinalCTASection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <motion.button
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              className="px-8 sm:px-10 lg:px-12 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white font-bold text-base sm:text-lg rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl touch-manipulation relative overflow-hidden group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10 flex items-center justify-center gap-2">
-                Request a demo
-                <ArrowRight
-                  size={20}
-                  className={`transition-all duration-300 flex-shrink-0 ${
-                    isHovered ? 'translate-x-2' : 'translate-x-0'
-                  }`}
-                />
-              </span>
-              <div className="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-all duration-300" />
-            </motion.button>
+            <Link href="/get-started-2026">
+              <motion.button
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                className="px-8 sm:px-10 lg:px-12 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white font-bold text-base sm:text-lg rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl touch-manipulation relative overflow-hidden group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  Request a demo
+                  <ArrowRight
+                    size={20}
+                    className={`transition-all duration-300 flex-shrink-0 ${
+                      isHovered ? 'translate-x-2' : 'translate-x-0'
+                    }`}
+                  />
+                </span>
+                <div className="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-all duration-300" />
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

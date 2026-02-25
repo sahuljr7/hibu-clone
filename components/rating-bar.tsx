@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { Star, Phone } from 'lucide-react'
 import { motion } from 'framer-motion'
 
@@ -38,13 +39,15 @@ export function RatingBar() {
                 877.237.6120
               </span>
             </div>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-3 sm:px-4 py-1.5 sm:py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-lg font-semibold text-xs sm:text-sm transition-colors whitespace-nowrap flex-shrink-0 touch-manipulation"
-            >
-              Request a demo
-            </motion.button>
+            <Link href="/get-started-2026">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-3 sm:px-4 py-1.5 sm:py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-lg font-semibold text-xs sm:text-sm transition-colors whitespace-nowrap flex-shrink-0 touch-manipulation"
+              >
+                Request a demo
+              </motion.button>
+            </Link>
           </div>
         </div>
 
