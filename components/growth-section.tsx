@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FeatureBullets } from './feature-bullets'
 import { DashboardMockup } from './dashboard-mockup'
@@ -96,12 +97,12 @@ export function GrowthSection() {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   viewport={{ once: true }}
                 >
-                  <button className="px-6 sm:px-8 py-2.5 sm:py-3 bg-lime-400 text-slate-900 font-bold text-sm sm:text-base rounded-full hover:bg-lime-300 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg relative overflow-hidden group touch-manipulation">
+                  <Link href="/hibu-one" className="px-6 sm:px-8 py-2.5 sm:py-3 bg-lime-400 text-slate-900 font-bold text-sm sm:text-base rounded-full hover:bg-lime-300 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg relative overflow-hidden group touch-manipulation inline-flex items-center justify-center">
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       Learn about Hibu One
                     </span>
                     <div className="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-all duration-300" />
-                  </button>
+                  </Link>
                   <button className="px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground font-bold text-sm sm:text-base rounded-full hover:from-primary/90 hover:to-primary/80 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-2xl relative overflow-hidden group touch-manipulation">
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       Request a demo

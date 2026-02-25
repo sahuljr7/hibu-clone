@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Play } from 'lucide-react'
 
@@ -84,9 +85,9 @@ export function VideoFeatureSection() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
-                <button className="px-6 sm:px-8 py-2.5 sm:py-3 bg-lime-400 text-slate-900 font-bold text-sm sm:text-base rounded-full hover:bg-lime-300 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg touch-manipulation">
+                <Link href="/hibu-one" className="px-6 sm:px-8 py-2.5 sm:py-3 bg-lime-400 text-slate-900 font-bold text-sm sm:text-base rounded-full hover:bg-lime-300 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg touch-manipulation inline-flex items-center justify-center">
                   Learn about Hibu One
-                </button>
+                </Link>
                 <button className="px-6 sm:px-8 py-2.5 sm:py-3 bg-primary text-primary-foreground font-bold text-sm sm:text-base rounded-full hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl touch-manipulation">
                   Request a demo
                 </button>

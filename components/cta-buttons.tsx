@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
 export function CTAButtons() {
@@ -9,10 +10,11 @@ export function CTAButtons() {
 
   return (
     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-      <button
+      <Link
+        href="/hibu-one"
         onMouseEnter={() => setLearnHovered(true)}
         onMouseLeave={() => setLearnHovered(false)}
-        className="px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-primary text-primary font-bold text-sm sm:text-base rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-105 active:scale-95 relative overflow-hidden group touch-manipulation"
+        className="px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-primary text-primary font-bold text-sm sm:text-base rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-105 active:scale-95 relative overflow-hidden group touch-manipulation inline-flex items-center justify-center"
       >
         <span className="relative z-10 flex items-center justify-center gap-2">
           <span className="hidden sm:inline">Learn about Hibu One</span>
@@ -25,7 +27,7 @@ export function CTAButtons() {
           />
         </span>
         <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary transition-all duration-300" />
-      </button>
+      </Link>
 
       <button
         onMouseEnter={() => setDemoHovered(true)}
