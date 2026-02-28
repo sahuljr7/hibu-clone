@@ -92,7 +92,7 @@ export function DashboardShowcase({
 
           {/* Large purple gradient media card with glassmorphism */}
           <motion.div
-            className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-purple-500 to-purple-700 dark:from-purple-600 dark:to-purple-900 backdrop-blur-sm border border-purple-400/20 dark:border-purple-500/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-purple-500/30 dark:hover:shadow-purple-500/50"
+            className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl bg-gradient-to-br from-purple-500 to-purple-700 dark:from-purple-600 dark:to-purple-900 backdrop-blur-sm border-2 border-purple-400/20 dark:border-purple-500/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-purple-500/30 dark:hover:shadow-purple-500/50"
             initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
             animate={
               isInView

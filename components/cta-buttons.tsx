@@ -14,7 +14,7 @@ export function CTAButtons() {
         href="/hibu-one"
         onMouseEnter={() => setLearnHovered(true)}
         onMouseLeave={() => setLearnHovered(false)}
-        className="px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-primary text-primary font-bold text-sm sm:text-base rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-105 active:scale-95 relative overflow-hidden group touch-manipulation inline-flex items-center justify-center"
+        className="px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-primary text-primary font-bold text-sm sm:text-base rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-103 active:scale-95 relative overflow-hidden group touch-manipulation inline-flex items-center justify-center shadow-md hover:shadow-xl"
       >
         <span className="relative z-10 flex items-center justify-center gap-2">
           <span className="hidden sm:inline">Learn about Hibu One</span>
@@ -33,7 +33,7 @@ export function CTAButtons() {
         href="/get-started-2026"
         onMouseEnter={() => setDemoHovered(true)}
         onMouseLeave={() => setDemoHovered(false)}
-        className="px-6 sm:px-8 py-2.5 sm:py-3 bg-primary text-primary-foreground font-bold text-sm sm:text-base rounded-full hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-2xl relative overflow-hidden group touch-manipulation inline-flex items-center justify-center cursor-pointer"
+        className="px-6 sm:px-8 py-2.5 sm:py-3 bg-primary text-primary-foreground font-bold text-sm sm:text-base rounded-full hover:bg-primary/90 transition-all duration-300 transform hover:scale-103 active:scale-95 shadow-md hover:shadow-xl relative overflow-hidden group touch-manipulation inline-flex items-center justify-center cursor-pointer"
       >
         <span className="relative z-10 flex items-center justify-center gap-2">
           Request a demo

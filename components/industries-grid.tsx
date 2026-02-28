@@ -106,7 +106,7 @@ function IndustryCategoryCard({ category, index }: IndustryCategoryCardProps) {
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
+      className="bg-card border-2 border-card-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200"
     >
       {/* Category Badge */}
       <div className="mb-4">
@@ -155,7 +155,7 @@ export function IndustriesGrid() {
         </div>
 
         {/* Responsive Grid: 1 column mobile, 2 columns tablet, 4 columns desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {industryCategories.map((category, index) => (
             <IndustryCategoryCard
               key={index}

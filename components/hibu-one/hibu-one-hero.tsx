@@ -159,7 +159,7 @@ export function HibuOneHero({
 
           {/* Media card with glassmorphism - right column on desktop */}
           <motion.div
-            className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl backdrop-blur-sm bg-white/10 dark:bg-slate-800/50 dark:border dark:border-slate-700/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-primary/20 dark:hover:shadow-primary/30"
+            className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-2xl backdrop-blur-sm bg-white/10 dark:bg-slate-800/50 border-2 border-card-border/60 dark:border-slate-700/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-primary/20 dark:hover:shadow-primary/30"
             initial={
               prefersReducedMotion ? {} : { opacity: 0, x: 20 }
             }

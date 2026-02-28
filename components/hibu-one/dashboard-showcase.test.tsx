@@ -78,10 +78,10 @@ describe('DashboardShowcase', () => {
     expect(mediaCard).toHaveClass('from-purple-500', 'to-purple-700')
   })
 
-  it('should apply rounded-3xl corners to media card', () => {
+  it('should apply rounded-xl corners to media card', () => {
     const { container } = render(<DashboardShowcase {...defaultProps} />)
 
-    const mediaCard = container.querySelector('.rounded-3xl')
+    const mediaCard = container.querySelector('.rounded-xl')
     expect(mediaCard).toBeInTheDocument()
   })
 

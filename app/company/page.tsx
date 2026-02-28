@@ -35,10 +35,10 @@ export default function CompanyPage() {
         badge="About Hibu"
         variant="featured"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <Link
             href="/about-us"
-            className="group p-6 rounded-lg border border-border bg-card hover:shadow-xl hover:border-primary/50 transition-all duration-300"
+            className="group p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200"
           >
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -67,7 +67,7 @@ export default function CompanyPage() {
 
           <Link
             href="/leadership"
-            className="group p-6 rounded-lg border border-border bg-card hover:shadow-xl hover:border-primary/50 transition-all duration-300"
+            className="group p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200"
           >
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -101,10 +101,10 @@ export default function CompanyPage() {
         title="Careers & Newsroom"
         badge="Join Us"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <Link
             href="/careers"
-            className="group p-6 rounded-lg border border-border bg-card hover:shadow-xl hover:border-primary/50 transition-all duration-300"
+            className="group p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200"
           >
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -133,7 +133,7 @@ export default function CompanyPage() {
 
           <Link
             href="/newsroom"
-            className="group p-6 rounded-lg border border-border bg-card hover:shadow-xl hover:border-primary/50 transition-all duration-300"
+            className="group p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200"
           >
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -171,7 +171,7 @@ export default function CompanyPage() {
         <div className="max-w-4xl mx-auto">
           <Link
             href="/contact"
-            className="group p-8 rounded-lg border border-border bg-card hover:shadow-xl hover:border-primary/50 transition-all duration-300 block"
+            className="group p-8 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200 block"
           >
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
               <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
@@ -226,10 +226,10 @@ export default function CompanyPage() {
         badge="Testimonials"
         variant="dark"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <Link
             href="/client-reviews"
-            className="group p-6 rounded-lg border border-border bg-card hover:shadow-xl hover:border-primary/50 transition-all duration-300"
+            className="group p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200"
           >
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -258,7 +258,7 @@ export default function CompanyPage() {
 
           <Link
             href="/video-testimonials"
-            className="group p-6 rounded-lg border border-border bg-card hover:shadow-xl hover:border-primary/50 transition-all duration-300"
+            className="group p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200"
           >
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -287,7 +287,7 @@ export default function CompanyPage() {
 
           <Link
             href="/employee-reviews"
-            className="group p-6 rounded-lg border border-border bg-card hover:shadow-xl hover:border-primary/50 transition-all duration-300"
+            className="group p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200"
           >
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">

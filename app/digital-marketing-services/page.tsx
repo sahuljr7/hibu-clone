@@ -38,20 +38,20 @@ export default function DigitalMarketingServicesPage() {
           <p className="text-lg text-muted-foreground leading-relaxed">
             Manage all your digital marketing from one centralized dashboard. Hibu One brings together advertising, analytics, and optimization tools to help you reach more customers and grow your business.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <div className="p-6 rounded-lg border border-border bg-card hover:shadow-lg transition-shadow duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div className="p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md transition-all duration-200">
               <h3 className="text-xl font-semibold mb-3 text-foreground">Unified Dashboard</h3>
               <p className="text-muted-foreground">
                 Track all your campaigns, performance metrics, and customer insights in one place.
               </p>
             </div>
-            <div className="p-6 rounded-lg border border-border bg-card hover:shadow-lg transition-shadow duration-300">
+            <div className="p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md transition-all duration-200">
               <h3 className="text-xl font-semibold mb-3 text-foreground">Smart Automation</h3>
               <p className="text-muted-foreground">
                 Let AI-powered tools optimize your campaigns automatically for better results.
               </p>
             </div>
-            <div className="p-6 rounded-lg border border-border bg-card hover:shadow-lg transition-shadow duration-300">
+            <div className="p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md transition-all duration-200">
               <h3 className="text-xl font-semibold mb-3 text-foreground">Expert Support</h3>
               <p className="text-muted-foreground">
                 Get guidance from dedicated marketing specialists who understand your business.
@@ -109,26 +109,26 @@ export default function DigitalMarketingServicesPage() {
           <p className="text-lg text-muted-foreground leading-relaxed">
             Improve your search engine rankings and attract more organic traffic with our comprehensive SEO services. Build a strong online presence that drives long-term growth.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="p-6 rounded-lg bg-card border border-border">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            <div className="p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md transition-all duration-200">
               <h3 className="text-xl font-semibold mb-3 text-foreground">Local SEO</h3>
               <p className="text-muted-foreground">
                 Optimize your business for local search results. Get found by customers in your area when they search for your services.
               </p>
             </div>
-            <div className="p-6 rounded-lg bg-card border border-border">
+            <div className="p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md transition-all duration-200">
               <h3 className="text-xl font-semibold mb-3 text-foreground">Content Marketing</h3>
               <p className="text-muted-foreground">
                 Create valuable content that attracts and engages your target audience. Build authority and trust in your industry.
               </p>
             </div>
-            <div className="p-6 rounded-lg bg-card border border-border">
+            <div className="p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md transition-all duration-200">
               <h3 className="text-xl font-semibold mb-3 text-foreground">Technical SEO</h3>
               <p className="text-muted-foreground">
                 Ensure your website is optimized for search engines with proper site structure, speed, and mobile responsiveness.
               </p>
             </div>
-            <div className="p-6 rounded-lg bg-card border border-border">
+            <div className="p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md transition-all duration-200">
               <h3 className="text-xl font-semibold mb-3 text-foreground">Link Building</h3>
               <p className="text-muted-foreground">
                 Build high-quality backlinks to improve your domain authority and search rankings.

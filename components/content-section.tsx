@@ -74,7 +74,7 @@ export function ContentSection({
 
           {/* Content */}
           <motion.div
-            className="grid grid-cols-1 gap-6 sm:gap-8"
+            className="grid grid-cols-1 gap-8"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}

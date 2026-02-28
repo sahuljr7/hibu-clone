@@ -15,16 +15,16 @@ export function ContentSectionExamples() {
         title="Our Services"
         badge="What We Offer"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="p-6 rounded-lg border border-border bg-card">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md transition-all duration-200">
             <h3 className="text-xl font-semibold mb-2">Service 1</h3>
             <p className="text-muted-foreground">Description of service 1</p>
           </div>
-          <div className="p-6 rounded-lg border border-border bg-card">
+          <div className="p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md transition-all duration-200">
             <h3 className="text-xl font-semibold mb-2">Service 2</h3>
             <p className="text-muted-foreground">Description of service 2</p>
           </div>
-          <div className="p-6 rounded-lg border border-border bg-card">
+          <div className="p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md transition-all duration-200">
             <h3 className="text-xl font-semibold mb-2">Service 3</h3>
             <p className="text-muted-foreground">Description of service 3</p>
           </div>
@@ -52,14 +52,14 @@ export function ContentSectionExamples() {
         badge="Client Reviews"
         variant="dark"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-lg bg-card">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md transition-all duration-200">
             <p className="text-muted-foreground italic mb-4">
               "Excellent service and results!"
             </p>
             <p className="font-semibold">- Happy Client</p>
           </div>
-          <div className="p-6 rounded-lg bg-card">
+          <div className="p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md transition-all duration-200">
             <p className="text-muted-foreground italic mb-4">
               "Highly recommend for digital marketing."
             </p>

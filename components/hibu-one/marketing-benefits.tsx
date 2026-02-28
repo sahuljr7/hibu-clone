@@ -53,7 +53,7 @@ export function MarketingBenefits({ cards }: MarketingBenefitsProps) {
         </h2>
 
         {/* Two-column grid on desktop, single column on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {cards.map((card, index) => (
             <motion.div
               key={card.title}
@@ -71,7 +71,7 @@ export function MarketingBenefits({ cards }: MarketingBenefitsProps) {
                 ease: easing,
               }}
             >
-              <Card className="h-full backdrop-blur-sm bg-white/80 dark:bg-slate-800/80 dark:border-slate-700/50 hover:shadow-lg dark:hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 border border-slate-200/50 dark:border-slate-700/50">
+              <Card className="h-full backdrop-blur-sm bg-white/80 dark:bg-slate-800/80 border-2 border-card-border/60 dark:border-slate-700/50 shadow-sm hover:shadow-lg dark:hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="text-2xl sm:text-3xl text-foreground">
                     {card.title}

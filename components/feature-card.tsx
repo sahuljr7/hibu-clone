@@ -78,7 +78,7 @@ export function FeatureCard({ icon, title, description, index = 0 }: FeatureCard
       
       {/* Card content with glassmorphism on hover */}
       <motion.div
-        className="relative bg-white/80 dark:bg-card/80 backdrop-blur-sm border border-white/20 dark:border-white/10 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 group-hover:bg-white/90 dark:group-hover:bg-card/90 group-hover:border-white/40 dark:group-hover:border-white/20 group-hover:shadow-xl dark:group-hover:shadow-blue-500/20 z-10"
+        className="relative bg-white/80 dark:bg-card/80 backdrop-blur-sm border-2 border-card-border/60 dark:border-white/10 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 group-hover:bg-white/90 dark:group-hover:bg-card/90 group-hover:border-card-border dark:group-hover:border-white/20 group-hover:shadow-xl dark:group-hover:shadow-blue-500/20 z-10"
         whileHover={{ scale: 1.02, y: -4 }}
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >

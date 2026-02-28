@@ -10,7 +10,7 @@ import { Download, Search } from 'lucide-react'
  */
 export function CaseStudyCard() {
   return (
-    <div className="p-6 rounded-xl bg-card border border-border shadow-md transition-colors duration-300">
+    <div className="p-6 rounded-xl bg-card border-2 border-card-border shadow-sm hover:shadow-md transition-all duration-200">
       {/* Label */}
       <p className="text-xs font-semibold text-muted-foreground tracking-wider uppercase mb-4">
         Auto Body Case Study

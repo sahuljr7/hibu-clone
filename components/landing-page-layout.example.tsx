@@ -41,9 +41,9 @@ export default function ExampleLandingPage() {
         badge="Featured"
         variant="featured"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Content items */}
-          <div className="p-6 rounded-lg border border-border bg-card">
+          <div className="p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md transition-all duration-200">
             <h3 className="text-xl font-semibold mb-2">All-in-One Platform</h3>
             <p className="text-muted-foreground">
               Manage all your digital marketing from one centralized dashboard.

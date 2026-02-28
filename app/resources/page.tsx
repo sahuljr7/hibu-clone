@@ -35,10 +35,10 @@ export default function ResourcesPage() {
         badge="Popular"
         variant="featured"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <Link
             href="/tools/marketing-quiz"
-            className="group p-6 rounded-lg border border-border bg-card hover:shadow-xl hover:border-primary/50 transition-all duration-300"
+            className="group p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200"
           >
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -67,7 +67,7 @@ export default function ResourcesPage() {
 
           <Link
             href="/tools/business-listings-scan"
-            className="group p-6 rounded-lg border border-border bg-card hover:shadow-xl hover:border-primary/50 transition-all duration-300"
+            className="group p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200"
           >
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -96,7 +96,7 @@ export default function ResourcesPage() {
 
           <Link
             href="/tools/digital-marketing-score"
-            className="group p-6 rounded-lg border border-border bg-card hover:shadow-xl hover:border-primary/50 transition-all duration-300"
+            className="group p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200"
           >
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -125,7 +125,7 @@ export default function ResourcesPage() {
 
           <Link
             href="/tools/social-advertising-calculator"
-            className="group p-6 rounded-lg border border-border bg-card hover:shadow-xl hover:border-primary/50 transition-all duration-300"
+            className="group p-6 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200"
           >
             <div className="space-y-3">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -167,7 +167,7 @@ export default function ResourcesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Link
               href="/blog"
-              className="group p-8 rounded-lg border border-border bg-card hover:shadow-xl hover:border-primary/50 transition-all duration-300"
+              className="group p-8 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200"
             >
               <div className="space-y-4">
                 <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -212,7 +212,7 @@ export default function ResourcesPage() {
 
             <Link
               href="/resources/guides"
-              className="group p-8 rounded-lg border border-border bg-card hover:shadow-xl hover:border-primary/50 transition-all duration-300"
+              className="group p-8 rounded-xl border-2 border-card-border bg-card shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200"
             >
               <div className="space-y-4">
                 <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -270,7 +270,7 @@ export default function ResourcesPage() {
           </p>
 
           {/* Featured Case Study */}
-          <div className="p-8 rounded-lg bg-card border border-border shadow-lg">
+          <div className="p-8 rounded-xl border-2 border-card-border bg-card shadow-sm transition-all duration-200">
             <div className="space-y-6">
               <div className="flex items-center gap-3">
                 <span className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">

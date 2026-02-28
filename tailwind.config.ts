@@ -29,12 +29,16 @@ const config: Config = {
       '2xl': '1536px',
     },
     extend: {
+      scale: {
+        '103': '1.03',
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
+          border: 'hsl(var(--card-border))',
         },
         popover: {
           DEFAULT: 'hsl(var(--popover))',

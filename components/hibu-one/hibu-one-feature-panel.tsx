@@ -118,7 +118,7 @@ export function HibuOneFeaturePanel({
               {dashboardImages.map((imageUrl, index) => (
                 <motion.div
                   key={index}
-                  className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl backdrop-blur-sm bg-white/10 dark:bg-slate-800/50 dark:border dark:border-slate-700/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-500/20 dark:hover:shadow-green-500/30"
+                  className="relative w-full aspect-video rounded-xl overflow-hidden shadow-xl backdrop-blur-sm bg-white/10 dark:bg-slate-800/50 border-2 border-card-border/60 dark:border-slate-700/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-500/20 dark:hover:shadow-green-500/30"
                   initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
                   animate={
                     isInView
