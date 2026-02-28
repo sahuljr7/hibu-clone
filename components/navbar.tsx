@@ -172,12 +172,13 @@ export function Navbar() {
               </button>
               {showMobileClientSupport && (
                 <div className="pl-4 space-y-1.5 animate-fade-in">
-                  <a
-                    href="#"
+                  <Link
+                    href="/client-support"
+                    onClick={() => setIsOpen(false)}
                     className="block text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors py-3 px-3 rounded hover:bg-secondary/30 touch-manipulation min-h-[44px] flex items-center"
                   >
                     Support
-                  </a>
+                  </Link>
                   <a
                     href="/login"
                     className="block text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors py-3 px-3 rounded hover:bg-secondary/30 touch-manipulation min-h-[44px] flex items-center"

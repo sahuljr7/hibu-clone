@@ -15,14 +15,16 @@ export function ClientSupportLoginDropdown() {
       <div className="p-6 sm:p-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 w-full">
           {/* Left Column - Contact Client Support */}
-          <div className="space-y-3">
-            <h3 className="text-base sm:text-lg font-bold text-foreground">
-              Contact Client Support
-            </h3>
-            <p className="text-sm text-foreground/60 leading-relaxed max-w-xs">
-              Our support team is ready to assist by phone, chat, or message
-            </p>
-          </div>
+          <Link href="/client-support" className="block">
+            <div className="space-y-3 cursor-pointer hover:opacity-80 transition-opacity">
+              <h3 className="text-base sm:text-lg font-bold text-foreground hover:text-primary transition-colors">
+                Contact Client Support
+              </h3>
+              <p className="text-sm text-foreground/60 leading-relaxed max-w-xs">
+                Our support team is ready to assist by phone, chat, or message
+              </p>
+            </div>
+          </Link>
 
           {/* Right Column - Visit Your Dashboard */}
           <Link href="/login" className="block">

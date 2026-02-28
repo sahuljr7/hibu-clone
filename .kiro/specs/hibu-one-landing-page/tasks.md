@@ -183,23 +183,23 @@ This implementation plan breaks down the Hibu One landing page into incremental,
     - Test that navigation button links to correct route
     - _Requirements: 1.1, 1.2, 2.1_
 
-- [~] 9. Checkpoint - Ensure all tests pass
+- [ ] 9. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 10. Implement accessibility features
-  - [~] 10.1 Add ARIA labels and semantic HTML
+  - [ ] 10.1 Add ARIA labels and semantic HTML
     - Add aria-labelledby to sections
     - Ensure proper heading hierarchy (h1 → h2 → h3)
     - Add landmark roles where appropriate
     - _Requirements: 8.3_
   
-  - [~] 10.2 Implement keyboard navigation
+  - [ ] 10.2 Implement keyboard navigation
     - Add visible focus indicators to all interactive elements
     - Test tab order is logical
     - Ensure all CTAs are keyboard accessible
     - _Requirements: 8.4_
   
-  - [~] 10.3 Verify color contrast
+  - [ ] 10.3 Verify color contrast
     - Check all text/background combinations meet WCAG AA
     - Adjust colors if needed for compliance
     - Test with browser DevTools contrast checker
@@ -223,18 +223,18 @@ This implementation plan breaks down the Hibu One landing page into incremental,
     - Test that heading hierarchy is correct
 
 - [ ] 11. Optimize performance
-  - [~] 11.1 Implement lazy loading for below-fold content
+  - [ ] 11.1 Implement lazy loading for below-fold content
     - Add loading="lazy" to all images below hero section
     - Verify lazy loading with browser DevTools Network tab
     - _Requirements: 6.1, 6.2_
   
-  - [~] 11.2 Optimize animations for performance
+  - [ ] 11.2 Optimize animations for performance
     - Verify all transforms use translate3d, scale, rotate
     - Add will-change property to animated elements
     - Remove will-change after animations complete
     - _Requirements: 6.3_
   
-  - [~] 11.3 Verify no heavy third-party libraries added
+  - [ ] 11.3 Verify no heavy third-party libraries added
     - Review package.json for any new animation libraries
     - Ensure only approved dependencies (Framer Motion) are used
     - _Requirements: 6.4_
@@ -250,18 +250,18 @@ This implementation plan breaks down the Hibu One landing page into incremental,
     - Test that animations use translate3d instead of top/left
 
 - [ ] 12. Implement responsive behavior
-  - [~] 12.1 Test and adjust mobile layouts
+  - [ ] 12.1 Test and adjust mobile layouts
     - Verify all sections stack properly on mobile
     - Test at 375px, 414px, and 768px widths
     - Adjust spacing and typography for mobile
     - _Requirements: 7.3_
   
-  - [~] 12.2 Test and adjust tablet layouts
+  - [ ] 12.2 Test and adjust tablet layouts
     - Verify layouts work at 768px to 1023px
     - Adjust grid columns and spacing
     - _Requirements: 7.2_
   
-  - [~] 12.3 Implement responsive parallax behavior
+  - [ ] 12.3 Implement responsive parallax behavior
     - Disable parallax on mobile (< 768px)
     - Reduce parallax offset on tablet
     - Test with useMediaQuery or CSS media queries
@@ -279,17 +279,17 @@ This implementation plan breaks down the Hibu One landing page into incremental,
     - _Requirements: 7.1, 7.2, 7.3_
 
 - [ ] 13. Implement design system consistency
-  - [~] 13.1 Apply consistent card styling
+  - [ ] 13.1 Apply consistent card styling
     - Ensure all large cards have rounded corners
     - Verify border-radius values are consistent
     - _Requirements: 9.2_
   
-  - [~] 13.2 Apply button styling patterns
+  - [ ] 13.2 Apply button styling patterns
     - Ensure secondary buttons use outline style
     - Verify primary buttons use filled style
     - _Requirements: 9.5_
   
-  - [~] 13.3 Verify brand color usage
+  - [ ] 13.3 Verify brand color usage
     - Check that purple and green are used consistently
     - Ensure accent colors match brand palette
     - _Requirements: 9.7_
@@ -309,17 +309,17 @@ This implementation plan breaks down the Hibu One landing page into incremental,
     - **Validates: Requirements 9.7**
     - Test that accent colors use purple or green from brand palette
 
-- [~] 14. Checkpoint - Ensure all tests pass
+- [ ] 14. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 15. Final performance validation
-  - [~] 15.1 Run Lighthouse performance audit
+  - [ ] 15.1 Run Lighthouse performance audit
     - Run Lighthouse in Chrome DevTools
     - Verify performance score is 90 or higher
     - Address any issues flagged by Lighthouse
     - _Requirements: 6.6_
   
-  - [~] 15.2 Test page load performance
+  - [ ] 15.2 Test page load performance
     - Measure First Contentful Paint (target < 1.8s)
     - Measure Largest Contentful Paint (target < 2.5s)
     - Measure Cumulative Layout Shift (target < 0.1)
@@ -330,27 +330,27 @@ This implementation plan breaks down the Hibu One landing page into incremental,
     - _Requirements: 6.6_
 
 - [ ] 16. Final integration and polish
-  - [~] 16.1 Test complete user flow
+  - [ ] 16.1 Test complete user flow
     - Navigate from home page to Hibu One page
     - Verify page transition animation works
     - Test all CTAs and navigation
     - Verify smooth scroll behavior
     - _Requirements: 1.2, 1.3, 5.3_
   
-  - [~] 16.2 Cross-browser testing
+  - [ ] 16.2 Cross-browser testing
     - Test in Chrome, Firefox, Safari, Edge
     - Verify animations work consistently
     - Check for any browser-specific issues
     - _Requirements: 3.1, 3.2, 4.1_
   
-  - [~] 16.3 Final accessibility audit
+  - [ ] 16.3 Final accessibility audit
     - Run axe DevTools or similar accessibility checker
     - Verify no critical accessibility issues
     - Test with keyboard navigation
     - Test with screen reader (optional but recommended)
     - _Requirements: 8.1, 8.2, 8.3, 8.4_
 
-- [~] 17. Final checkpoint - Ensure all tests pass
+- [ ] 17. Final checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 ## Notes
