@@ -3,6 +3,7 @@ import { Navbar } from '@/components/navbar'
 import { PageTransition } from '@/components/shared/page-transition'
 import { ClientSupportContact } from '@/components/client-support/client-support-contact'
 import { ClientSupportForm } from '@/components/client-support/client-support-form'
+import { UtilityBar } from '@/components/utility-bar'
 
 /**
  * Metadata for SEO optimization
@@ -32,6 +33,7 @@ export default function ClientSupportPage() {
   return (
     <PageTransition>
       <main className="min-h-screen w-full">
+        <UtilityBar />
         <Navbar />
 
         {/* Main Content Section */}
