@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
-import { Phone, Star } from 'lucide-react'
+import { Star, Phone } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 /**
  * Utility Bar Component
@@ -7,49 +10,61 @@ import { Phone, Star } from 'lucide-react'
  * Displays rating information and contact details at the top of the page
  * - Left side: Star rating with review count
  * - Right side: Phone number and CTA button
+ * Matches the styling of RatingBar component from home page
  */
 export function UtilityBar() {
   return (
-    <div className="w-full bg-white border-b border-gray-200">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row items-center justify-between py-3 gap-4 sm:gap-6">
-          {/* Left: Rating */}
-          <div className="flex items-center gap-2 text-sm">
-            <span className="font-semibold text-gray-900">4.3</span>
-            <div className="flex items-center gap-0.5" aria-label="4.3 out of 5 stars">
-              {[1, 2, 3, 4, 5].map((star) => (
+    <div className="w-full bg-background border-b border-border sticky top-0 z-40">
+      <div className="container mx-auto px-4 py-2 sm:py-3">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+          {/* Rating Section */}
+          <div className="flex items-center gap-2 order-2 sm:order-1">
+            <span className="text-lg sm:text-base font-bold text-orange-500">
+              4.3
+            </span>
+            <div className="flex items-center gap-0.5 sm:gap-1">
+              {[...Array(5)].map((_, i) => (
                 <Star
-                  key={star}
-                  className={`w-4 h-4 ${
-                    star <= 4 ? 'fill-yellow-400 text-yellow-400' : 'fill-gray-300 text-gray-300'
-                  }`}
-                  aria-hidden="true"
+                  key={i}
+                  size={14}
+                  className="fill-orange-500 text-orange-500 sm:w-4 sm:h-4"
                 />
               ))}
             </div>
-            <span className="text-gray-600">
+            <a
+              href="#"
+              className="text-xs sm:text-sm text-blue-500 hover:text-blue-600 transition-colors"
+            >
               (2404 Ratings & Reviews)
-            </span>
+            </a>
           </div>
 
-          {/* Right: Contact & CTA */}
-          <div className="flex items-center gap-4">
-            <a
-              href="tel:877.237.6120"
-              className="flex items-center gap-2 text-gray-900 hover:text-purple-700 transition-colors"
-              aria-label="Call 877.237.6120"
-            >
-              <Phone className="w-4 h-4" aria-hidden="true" />
-              <span className="font-medium">877.237.6120</span>
-            </a>
-            
-            <Link
-              href="/get-started-2026"
-              className="bg-purple-700 hover:bg-purple-800 text-white px-6 py-2 rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-            >
-              Request a demo
+          {/* Right Actions */}
+          <div className="flex items-center gap-2 sm:gap-6 w-full sm:w-auto order-1 sm:order-2 justify-end">
+            <div className="hidden sm:flex items-center gap-2">
+              <Phone size={16} className="text-foreground flex-shrink-0" />
+              <span className="text-sm font-medium text-foreground">
+                877.237.6120
+              </span>
+            </div>
+            <Link href="/get-started-2026">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-3 sm:px-4 py-1.5 sm:py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-lg font-semibold text-xs sm:text-sm transition-colors whitespace-nowrap flex-shrink-0 touch-manipulation"
+              >
+                Request a demo
+              </motion.button>
             </Link>
           </div>
+        </div>
+
+        {/* Mobile phone number */}
+        <div className="flex items-center gap-1 sm:hidden pt-2">
+          <Phone size={14} className="text-foreground flex-shrink-0" />
+          <span className="text-xs font-medium text-foreground">
+            877.237.6120
+          </span>
         </div>
       </div>
     </div>
