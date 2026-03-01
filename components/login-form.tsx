@@ -53,7 +53,7 @@ export function LoginForm() {
       animate="visible"
     >
       {/* Card Container */}
-      <div className="group/card bg-white/95 dark:bg-slate-900/95 rounded-2xl shadow-xl dark:shadow-2xl dark:shadow-blue-900/20 p-8 sm:p-10 backdrop-blur-lg border-2 border-slate-200/60 dark:border-slate-700/60 transition-all duration-300 hover:border-slate-300/80 dark:hover:border-slate-600/80 hover:shadow-2xl dark:hover:shadow-blue-500/10 hover:backdrop-blur-xl hover:-translate-y-1">
+      <div className="group/card bg-white/95 dark:bg-slate-900/95 rounded-2xl shadow-xl dark:shadow-2xl dark:shadow-blue-900/20 p-8 sm:p-10 backdrop-blur-lg border-2 border-slate-300/70 dark:border-slate-600/70 transition-all duration-300 ease-out hover:border-slate-400/80 dark:hover:border-slate-500/80 hover:shadow-2xl dark:hover:shadow-blue-500/10 hover:backdrop-blur-xl hover:bg-white/90 dark:hover:bg-slate-900/90 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] dark:hover:shadow-[0_0_30px_rgba(59,130,246,0.25)] hover:scale-[1.01] hover:-translate-y-1">
         {/* Header */}
         <motion.div
           className="text-center mb-8"

@@ -1,7 +1,6 @@
 import { LandingPageLayout, generateLandingPageMetadata } from '@/components/landing-page-layout'
 import { LandingHeroSection } from '@/components/landing-hero-section'
 import { IndustriesGrid } from '@/components/industries-grid'
-import { DynamicBackground } from '@/components/dynamic-background'
 
 export const metadata = generateLandingPageMetadata({
   title: 'Industries We Serve | Hibu',
@@ -13,7 +12,6 @@ export const metadata = generateLandingPageMetadata({
 export default function IndustriesPage() {
   return (
     <>
-      <DynamicBackground />
       <LandingPageLayout
         title={metadata.title as string}
         description={metadata.description as string}
