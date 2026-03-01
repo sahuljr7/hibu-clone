@@ -53,14 +53,14 @@ export function LoginForm() {
       animate="visible"
     >
       {/* Card Container */}
-      <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl dark:shadow-2xl dark:shadow-blue-900/20 p-8 sm:p-10 backdrop-blur-lg bg-opacity-95 dark:bg-opacity/95 border border-white/20 dark:border-slate-800/50">
+      <div className="group/card bg-white/95 dark:bg-slate-900/95 rounded-2xl shadow-xl dark:shadow-2xl dark:shadow-blue-900/20 p-8 sm:p-10 backdrop-blur-lg border-2 border-slate-200/60 dark:border-slate-700/60 transition-all duration-300 hover:border-slate-300/80 dark:hover:border-slate-600/80 hover:shadow-2xl dark:hover:shadow-blue-500/10 hover:backdrop-blur-xl hover:-translate-y-1">
         {/* Header */}
         <motion.div
           className="text-center mb-8"
           variants={itemVariants}
           custom={0}
         >
-          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-2 flex items-center justify-center gap-2">
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-50 mb-2 flex items-center justify-center gap-2">
             <span className="font-display">hibu</span>
             <div className="flex gap-1">
               <span className="w-2 h-2 rounded-full bg-blue-500"></span>
@@ -68,12 +68,12 @@ export function LoginForm() {
               <span className="w-2 h-2 rounded-full bg-green-500"></span>
             </div>
           </h1>
-          <p className="text-sm text-muted-foreground mt-3">Performance Dashboard</p>
-          <p className="text-xs sm:text-sm text-muted-foreground mt-4">
+          <p className="text-sm text-slate-600 dark:text-slate-400 mt-3">Performance Dashboard</p>
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-4">
             Former Signpost software clients{' '}
             <a
               href="#"
-              className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
+              className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
             >
               login here
             </a>
@@ -87,7 +87,7 @@ export function LoginForm() {
           <motion.div variants={itemVariants} custom={1}>
             <div className="relative group">
               <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <Mail size={18} className="text-slate-400 dark:text-slate-500 group-focus-within:text-blue-500 transition-colors" />
+                <Mail size={18} className="text-slate-500 dark:text-slate-400 group-focus-within:text-blue-500 transition-colors" />
               </div>
               <input
                 type="email"
@@ -95,7 +95,7 @@ export function LoginForm() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email Address"
                 required
-                className="w-full pl-12 pr-4 py-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg text-foreground placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:focus:ring-blue-400 transition-all duration-200"
+                className="w-full pl-12 pr-4 py-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-300 dark:border-slate-600 rounded-lg text-slate-900 dark:text-slate-100 placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:focus:ring-blue-400 transition-all duration-200"
               />
             </div>
           </motion.div>
@@ -104,7 +104,7 @@ export function LoginForm() {
           <motion.div variants={itemVariants} custom={2}>
             <div className="relative group">
               <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <Lock size={18} className="text-slate-400 dark:text-slate-500 group-focus-within:text-blue-500 transition-colors" />
+                <Lock size={18} className="text-slate-500 dark:text-slate-400 group-focus-within:text-blue-500 transition-colors" />
               </div>
               <input
                 type={showPassword ? 'text' : 'password'}
@@ -112,12 +112,12 @@ export function LoginForm() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
                 required
-                className="w-full pl-12 pr-12 py-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg text-foreground placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:focus:ring-blue-400 transition-all duration-200"
+                className="w-full pl-12 pr-12 py-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-300 dark:border-slate-600 rounded-lg text-slate-900 dark:text-slate-100 placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:focus:ring-blue-400 transition-all duration-200"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute inset-y-0 right-0 pr-4 flex items-center text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 font-medium text-xs sm:text-sm transition-colors"
+                className="absolute inset-y-0 right-0 pr-4 flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-xs sm:text-sm transition-colors"
               >
                 {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
@@ -135,9 +135,9 @@ export function LoginForm() {
               id="keep-logged-in"
               checked={keepLoggedIn}
               onChange={(e) => setKeepLoggedIn(e.target.checked)}
-              className="w-4 h-4 rounded border-slate-300 dark:border-slate-600 text-blue-500 focus:ring-blue-500 cursor-pointer accent-blue-500"
+              className="w-4 h-4 rounded border-slate-300 dark:border-slate-600 text-blue-600 focus:ring-blue-500 cursor-pointer accent-blue-600"
             />
-            <label htmlFor="keep-logged-in" className="ml-2 text-sm text-foreground cursor-pointer">
+            <label htmlFor="keep-logged-in" className="ml-2 text-sm text-slate-700 dark:text-slate-300 cursor-pointer">
               Keep me logged in
             </label>
           </motion.div>
@@ -168,34 +168,34 @@ export function LoginForm() {
 
         {/* Footer Links */}
         <motion.div
-          className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-wrap justify-center gap-4 text-xs sm:text-sm"
+          className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-700 flex flex-wrap justify-center gap-4 text-xs sm:text-sm"
           variants={itemVariants}
           custom={5}
         >
           <a
             href="#"
-            className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
+            className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
           >
             First Time User?
           </a>
-          <span className="text-slate-300 dark:text-slate-700">|</span>
+          <span className="text-slate-300 dark:text-slate-600">|</span>
           <a
             href="#"
-            className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
+            className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
           >
             Forgot password?
           </a>
-          <span className="text-slate-300 dark:text-slate-700">|</span>
+          <span className="text-slate-300 dark:text-slate-600">|</span>
           <a
             href="#"
-            className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
+            className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
           >
             Log in help
           </a>
-          <span className="text-slate-300 dark:text-slate-700">|</span>
+          <span className="text-slate-300 dark:text-slate-600">|</span>
           <a
             href="tel:1-877-237-6120"
-            className="text-slate-600 dark:text-slate-400 hover:text-foreground transition-colors"
+            className="text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
           >
             Hotline: 1-877-237-6120
           </a>

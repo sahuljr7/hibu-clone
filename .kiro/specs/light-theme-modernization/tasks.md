@@ -123,7 +123,7 @@ This implementation plan breaks down the Light Theme modernization into discrete
 - [x] 14. Checkpoint - Verify Card Styling Consistency
   - Ensure all tests pass, ask the user if questions arise.
 
-- [~] 15. Update Typography Spacing
+- [ ] 15. Update Typography Spacing
   - Increase section padding from `py-16` to `py-20` in major sections
   - Increase heading margins for clearer hierarchy
   - Verify text remains readable with new spacing
@@ -134,7 +134,7 @@ This implementation plan breaks down the Light Theme modernization into discrete
   - Test that headings have appropriate margins
   - _Requirements: 1.3, 1.4_
 
-- [~] 16. Verify Parallax Effects Preservation
+- [ ] 16. Verify Parallax Effects Preservation
   - Check that all parallax-related code in components remains unchanged
   - Test parallax effects still work correctly in Light Theme
   - Verify `use-parallax.ts` hook is unmodified
@@ -144,7 +144,7 @@ This implementation plan breaks down the Light Theme modernization into discrete
   - **Property 7: Parallax Effect Preservation**
   - **Validates: Requirements 4.3**
 
-- [~] 17. Implement Theme Switching Test
+- [ ] 17. Implement Theme Switching Test
   - Create integration test for theme toggle functionality
   - Verify switching between light and dark themes works correctly
   - Ensure no visual glitches during transition
@@ -156,7 +156,7 @@ This implementation plan breaks down the Light Theme modernization into discrete
   - Verify theme toggle component functionality
   - _Requirements: 5.3_
 
-- [~] 18. Run Accessibility Verification
+- [ ] 18. Run Accessibility Verification
   - Use `scripts/verify-accessibility.ts` to check contrast ratios
   - Verify all color combinations meet WCAG AA standards
   - Generate accessibility report
@@ -169,21 +169,21 @@ This implementation plan breaks down the Light Theme modernization into discrete
   - Verify minimum contrast ratios (4.5:1 for normal text, 3:1 for large text)
   - _Requirements: 2.2, 2.5, 6.1, 6.2, 6.4_
 
-- [~] 19. Cross-Browser Testing
+- [ ] 19. Cross-Browser Testing
   - Test Light Theme in Chrome, Firefox, Safari, and Edge
   - Verify CSS variables render correctly in all browsers
   - Test on mobile devices (iOS Safari, Chrome Mobile)
   - Document any browser-specific issues
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5_
 
-- [~] 20. Visual Regression Verification
+- [ ] 20. Visual Regression Verification
   - Capture screenshots of all major pages in Light Theme
   - Compare with baseline screenshots (if available)
   - Verify Dark Theme screenshots remain identical
   - Document any unintended visual changes
   - _Requirements: 4.1, 5.1, 5.4_
 
-- [~] 21. Final Checkpoint - Complete Testing
+- [ ] 21. Final Checkpoint - Complete Testing
   - Ensure all tests pass, ask the user if questions arise.
 
 ## Notes

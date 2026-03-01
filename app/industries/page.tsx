@@ -1,6 +1,7 @@
 import { LandingPageLayout, generateLandingPageMetadata } from '@/components/landing-page-layout'
 import { LandingHeroSection } from '@/components/landing-hero-section'
 import { IndustriesGrid } from '@/components/industries-grid'
+import { DynamicBackground } from '@/components/dynamic-background'
 
 export const metadata = generateLandingPageMetadata({
   title: 'Industries We Serve | Hibu',
@@ -11,18 +12,21 @@ export const metadata = generateLandingPageMetadata({
 
 export default function IndustriesPage() {
   return (
-    <LandingPageLayout
-      title={metadata.title as string}
-      description={metadata.description as string}
-    >
-      <LandingHeroSection
-        title="Industries We Serve"
-        subtitle="Tailored Solutions"
-        description="Hibu provides specialized digital marketing solutions designed for the unique needs of businesses across diverse industries. From automotive to home services, we understand your market and help you grow."
-        backgroundGradient="from-blue-50 via-background to-purple-50"
-      />
+    <>
+      <DynamicBackground />
+      <LandingPageLayout
+        title={metadata.title as string}
+        description={metadata.description as string}
+      >
+        <LandingHeroSection
+          title="Industries We Serve"
+          subtitle="Tailored Solutions"
+          description="Hibu provides specialized digital marketing solutions designed for the unique needs of businesses across diverse industries. From automotive to home services, we understand your market and help you grow."
+          backgroundGradient="from-blue-50 via-background to-purple-50"
+        />
 
-      <IndustriesGrid />
-    </LandingPageLayout>
+        <IndustriesGrid />
+      </LandingPageLayout>
+    </>
   )
 }
