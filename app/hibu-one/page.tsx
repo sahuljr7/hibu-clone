@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
-import { Navbar } from '@/components/navbar'
-import { RatingBar } from '@/components/rating-bar'
 import { PageTransition } from '@/components/shared/page-transition'
+import { HibuOneHeader } from '@/components/hibu-one/hibu-one-header'
 import { HibuOneHero } from '@/components/hibu-one/hibu-one-hero'
 import { MarketingBenefits } from '@/components/hibu-one/marketing-benefits'
 import { HibuOneFeaturePanel } from '@/components/hibu-one/hibu-one-feature-panel'
@@ -64,8 +63,7 @@ export default function HibuOnePage() {
   return (
     <PageTransition>
       <main className="w-full">
-        <RatingBar />
-        <Navbar />
+        <HibuOneHeader />
 
         {/* Hero Section */}
         <HibuOneHero
