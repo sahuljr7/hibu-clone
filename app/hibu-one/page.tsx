@@ -76,6 +76,7 @@ export default function HibuOnePage() {
           secondaryCTA={hibuOneContent.hero.secondaryCTA}
           mediaUrl={hibuOneContent.hero.media.url}
           mediaAlt={hibuOneContent.hero.media.alt}
+          mediaCard={hibuOneContent.hero.mediaCard}
         />
 
         {/* Marketing Benefits Cards */}

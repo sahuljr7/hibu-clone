@@ -3,6 +3,8 @@
  * Single source of truth for all page content
  */
 
+import React from 'react'
+
 export interface CTAButton {
   text: string
   href: string
@@ -30,12 +32,29 @@ export interface SectionContent {
   media?: MediaCard
 }
 
-export interface HibuOnePageContent {
-  hero: SectionContent & {
-    primaryCTA: CTAButton
-    secondaryCTA: CTAButton
-    media: MediaCard
+export interface HeroContent extends SectionContent {
+  description: string | React.ReactNode
+  primaryCTA: CTAButton
+  secondaryCTA: CTAButton
+  media: MediaCard
+  mediaCard?: {
+    logo?: string
+    logoAlt?: string
+    tagline?: string
+    watchCTA?: {
+      text: string
+      href?: string
+    }
+    mockups?: Array<{
+      url: string
+      alt: string
+      position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'center'
+    }>
   }
+}
+
+export interface HibuOnePageContent {
+  hero: HeroContent
   marketingBenefits: {
     cards: [FeatureCard, FeatureCard]
   }
@@ -56,24 +75,55 @@ export interface HibuOnePageContent {
 
 export const hibuOneContent: HibuOnePageContent = {
   hero: {
-    heading: 'Hibu One: Your All-in-One Marketing Platform',
+    heading: 'Hibu One',
     subheading: 'Simplify Your Digital Marketing',
-    description:
-      'Manage all your digital marketing campaigns from one powerful platform. Hibu One combines advertising, organic marketing, and analytics into a seamless experience.',
+    description: (
+      <>
+        We help you <strong>establish your business online</strong>,{' '}
+        <strong>promote it everywhere</strong>, and{' '}
+        <strong>get the results and support</strong> you need to succeed.
+      </>
+    ),
     primaryCTA: {
-      text: 'Get Started',
+      text: 'Request a demo',
       href: '/contact',
       variant: 'primary',
     },
     secondaryCTA: {
-      text: 'Watch Demo',
+      text: 'Tour the Platform',
       href: '/demo',
       variant: 'outline',
     },
     media: {
       url: '/images/hibu-one/hero-dashboard.jpg',
-      alt: 'Hibu One dashboard showing unified marketing platform interface',
+      alt: 'Hibu One platform overview',
       type: 'image',
+    },
+    mediaCard: {
+      logo: '/images/hibu-one/hibu-one-logo.svg',
+      logoAlt: 'hibu ONE logo',
+      tagline: 'Enterprise-level marketing built for local businesses',
+      watchCTA: {
+        text: 'WATCH NOW ▶',
+        href: '/demo-video',
+      },
+      mockups: [
+        {
+          url: '/images/hibu-one/mockup-website.png',
+          alt: 'Website preview mockup',
+          position: 'top-left',
+        },
+        {
+          url: '/images/hibu-one/mockup-reviews.png',
+          alt: 'Review card mockup',
+          position: 'top-right',
+        },
+        {
+          url: '/images/hibu-one/mockup-listings.png',
+          alt: 'Local listings mockup',
+          position: 'bottom-right',
+        },
+      ],
     },
   },
 

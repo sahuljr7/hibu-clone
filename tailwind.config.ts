@@ -33,6 +33,10 @@ const config: Config = {
         '103': '1.03',
       },
       colors: {
+        green: {
+          25: 'hsl(142, 76%, 97%)',
+          50: 'hsl(142, 76%, 94%)',
+        },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
