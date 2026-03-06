@@ -79,14 +79,14 @@ export const hibuOneContent: HibuOnePageContent = {
     subheading: 'Simplify Your Digital Marketing',
     description: (
       <>
-        We help you <strong>establish your business online</strong>,{' '}
-        <strong>promote it everywhere</strong>, and{' '}
-        <strong>get the results and support</strong> you need to succeed.
+        An enterprise-level digital marketing solution with everything you need to{' '}
+        <strong>establish your business online</strong>… <strong>promote it everywhere</strong> you need to…and{' '}
+        <strong>get the results and support</strong> you're expecting.
       </>
     ),
     primaryCTA: {
       text: 'Request a demo',
-      href: '/contact',
+      href: '/get-started-2026',
       variant: 'primary',
     },
     secondaryCTA: {
