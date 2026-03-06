@@ -69,13 +69,13 @@ export function LayeredMediaCard({
       }}
     >
       {/* Shadow Layer - green gradient offset to right and bottom */}
-      <div className="absolute top-5 left-5 right-[-20px] bottom-[-20px] bg-gradient-to-br from-green-100 to-green-200 rounded-3xl -z-10" />
+      <div className="absolute top-5 left-5 right-[-20px] bottom-[-20px] -bottom-5 -right-5 -z-10 rounded-3xl rounded-[2rem] bg-gradient-to-br from-green-100 from-[#bee7b6] to-green-200 to-[#9fda92]" />
 
       {/* Primary Layer - purple gradient with content */}
-      <div className="relative bg-gradient-to-br from-purple-600 via-purple-500 to-purple-700 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden">
+      <div className="relative overflow-hidden rounded-3xl rounded-[2rem] bg-gradient-to-br from-purple-600 from-[#6d28d9] via-purple-500 via-[#5b21b6] to-purple-700 to-[#4c1d95] p-8 shadow-2xl md:p-12">
         {/* Logo - top-left corner */}
         {logo && (
-          <div className="absolute top-6 left-6 md:top-8 md:left-8">
+          <div className="absolute left-6 top-6 md:left-8 md:top-8">
             <Image
               src={logo}
               alt={logoAlt}
@@ -88,10 +88,10 @@ export function LayeredMediaCard({
         )}
 
         {/* Centered content container */}
-        <div className="flex flex-col items-center justify-center text-center space-y-6 md:space-y-8 min-h-[300px] md:min-h-[400px]">
+        <div className="relative z-20 flex min-h-[300px] min-h-[320px] flex-col items-center justify-center space-y-6 text-center md:min-h-[400px] md:min-h-[440px] md:space-y-8">
           {/* Tagline - centered text */}
           {tagline && (
-            <p className="text-white text-xl md:text-2xl lg:text-3xl font-semibold max-w-2xl leading-relaxed px-4">
+            <p className="max-w-2xl px-4 text-xl text-2xl font-semibold leading-relaxed text-white md:text-2xl md:text-3xl lg:text-3xl">
               {tagline}
             </p>
           )}
@@ -99,19 +99,19 @@ export function LayeredMediaCard({
           {/* Watch CTA - centered button/link */}
           {watchCTA && (
             watchCTA.href ? (
-              <Link
-                href={watchCTA.href}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 rounded-full text-white font-semibold text-sm md:text-base transition-all duration-300 hover:scale-105"
-              >
-                {watchCTA.text}
-              </Link>
+                <Link
+                  href={watchCTA.href}
+                  className="inline-flex items-center gap-2 rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/20 md:text-base"
+                >
+                  {watchCTA.text}
+                </Link>
             ) : (
-              <button
-                type="button"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 rounded-full text-white font-semibold text-sm md:text-base transition-all duration-300 hover:scale-105"
-              >
-                {watchCTA.text}
-              </button>
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/20 md:text-base"
+                >
+                  {watchCTA.text}
+                </button>
             )
           )}
         </div>
@@ -122,10 +122,10 @@ export function LayeredMediaCard({
             {mockups.map((mockup, index) => {
               // Position mapping object for different mockup positions
               const positionClasses = {
-                'top-left': 'top-4 left-4 md:top-6 md:left-6',
-                'top-right': 'top-4 right-4 md:top-6 md:right-6',
-                'bottom-left': 'bottom-4 left-4 md:bottom-6 md:left-6',
-                'bottom-right': 'bottom-4 right-4 md:bottom-6 md:right-6',
+                'top-left': 'top-4 left-4 top-14 left-5 md:top-6 md:left-6 md:top-20 md:left-8',
+                'top-right': 'top-4 right-4 top-12 right-4 md:top-6 md:right-6 md:top-16 md:right-8',
+                'bottom-left': 'bottom-4 left-4 bottom-10 left-8 md:bottom-6 md:left-6 md:bottom-12 md:left-12',
+                'bottom-right': 'bottom-4 right-4 bottom-8 right-4 md:bottom-6 md:right-6 md:bottom-10 md:right-8',
                 'center': 'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
               }
 
@@ -148,7 +148,7 @@ export function LayeredMediaCard({
                     height={150}
                     priority={index === 0}
                     sizes="(max-width: 640px) 120px, (max-width: 1024px) 160px, 200px"
-                    className="w-24 h-auto sm:w-32 md:w-40 lg:w-48 rounded-lg shadow-xl"
+                    className="h-auto w-24 rounded-xl border border-white/25 shadow-xl sm:w-32 md:w-40 lg:w-48"
                   />
                 </motion.div>
               )
